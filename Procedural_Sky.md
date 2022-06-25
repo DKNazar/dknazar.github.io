@@ -1,4 +1,8 @@
-
+---
+layout: page
+title: "Procedural Sky"
+permalink: /procedural-sky/
+---
 <h1 align="center">Procedural Sky and Weather</h1>
 
 
