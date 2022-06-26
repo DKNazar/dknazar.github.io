@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Procedural Sky"
 permalink: /procedural-sky/
 ---
