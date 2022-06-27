@@ -36,7 +36,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-  <h3><a href="advancing-the-water-shader"> Advancing the Water Shader </a> </h3>
+  <h3><a href="advancing-water-shader"> Advancing the Water Shader </a> </h3>
   <ul>
   <li><em>Improving one of my first shaders for Origami Ninja Star, and making it more interactive</em></li>
   </ul>
