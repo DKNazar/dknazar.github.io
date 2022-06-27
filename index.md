@@ -10,49 +10,88 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
 <div align="center">
   <h3><a href="procedural-sky"> PBR Procedural Sky </a> </h3>
-<ul>
-<li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
-</ul>
-</div>
-<p align="center">
+  <ul>
+  <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
+  </ul>
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-</p>
 
-### [PBR Procedural Sky](procedural-sky)
-| *For Cricket 22 we needed a next-gen dynamic sky and weather solution* <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky"> 
-|
-|:--:|
+  <h3><a href="level-design-tools-1"> Accidentally Developing a Level Design Tool </a> </h3>
+  <ul>
+  <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
+  </ul>
+  
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-### Level Tools
-- *Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool*
+  <h3><a href="post-processing-urp"> Post-Processing in URP </a> </h3>
+  <ul>
+  <li><em>Adding a custom post processing step in Unity URP</em></li>
+  </ul>
 
-### Post-Processing
-- *Adding a custom post processing step in Unity URP*
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-### Moving to URP
-- *after many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle*
+  <h3><a href="post-processing-urp"> Post-Processing in URP </a> </h3>
+  <ul>
+  <li><em>Adding a custom post processing step in Unity URP</em></li>
+  </ul>
 
-### Advancing the Water Shader
-- *Improving one of my first shaders for Origami Ninja Star, and making it more interactive*
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-### Origami Ninja Star
-- *Chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Currently in development*
+  <h3><a href="moving-to-urp"> Moving to URP </a> </h3>
+  <ul>
+  <li><em>After many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle</em></li>
+  </ul>
 
-### Flora Generator (Maya)
-- *For my final year 3D Animation project I chose to develop a procedural art tool to create Flora for games and animation in Maya*
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-### Escape From Space
-- *Game based on real science for high-school students to increase interest in STEM (Science, Technology, Engineering and Mathematics) professions.*
+  <h3><a href="advancing-the-water-shader"> Advancing the Water Shader </a> </h3>
+  <ul>
+  <li><em>Improving one of my first shaders for Origami Ninja Star, and making it more interactive</em></li>
+  </ul>
 
-### Grass Shader in UE4 and Unity
-- *After playing Breath of the Wild, my only question was how to make that beautiful grass!*
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-### Terrain Generation Algorithms
-- *I decided to research common terrain generation algorithms in games. This was inspired by Sean Murray’s GDC talk “Building Worlds in No Man’s Sky Using Math(s)”*
+  <h3><a href="origami-ninja-star"> Origami Ninja Star </a> </h3>
+  <ul>
+  <li><em>Chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Currently in development</em></li>
+  </ul>
 
-### Character Modelling
-- *In this project I was give a random animal and attribute, I got “Party-animal” and “Lizard."*
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
+  <h3><a href="flora-generator">Flora Generator (Maya) </a> </h3>
+  <ul>
+  <li><em>For my final year 3D Animation project I chose to develop a procedural art tool to create Flora for games and animation in Maya</em></li>
+  </ul>
+
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  
+  <h3><a href="escape-from-space">Escape From Space </a> </h3>
+  <ul>
+  <li><em>Game based on real science for high-school students to increase interest in STEM (Science, Technology, Engineering and Mathematics) professions</em></li>
+  </ul>
+
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <h3><a href="grass-shader-UE4-Unity">Grass Shader in UE4 and Unity </a> </h3>
+  <ul>
+  <li><em>After playing Breath of the Wild, my only question was how to make that beautiful grass!</em></li>
+  </ul>
+
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+
+  <h3><a href="terrain-generation-algorithms">Terrain Generation Algorithms </a> </h3>
+  <ul>
+  <li><em>I decided to research common terrain generation algorithms in games. This was inspired by Sean Murray’s GDC talk “Building Worlds in No Man’s Sky Using Math(s)”</em></li>
+  </ul>
+
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  
+  <h3><a href="character-modelling">Character Modelling </a> </h3>
+  <ul>
+  <li><em>In this project I was give a random animal and attribute, I got “Party-animal” and “Lizard." Woohoo....</em></li>
+  </ul>
+
+  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+</div>
+ 
 You can use the [editor on GitHub](https://github.com/DKNazar/dknazar.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
