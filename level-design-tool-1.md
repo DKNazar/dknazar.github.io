@@ -10,9 +10,9 @@ Originally my journey into tools started off as a procedural house builder for t
 
 todo: housebuild gif
 
-<p align="center">
-
-</p>
+<div align="center">
+  <img src="/images/HouseAnimBuild.gif"></img>
+</div>
 
 This was a very straight forward approach; I hijack the line render tool to create an outline or floor-plan for the house. Then I populate this outline with a library of different house piece quads, like a door section, circle window, square window or other features. To avoid sizing issues the floor-plans can be snapped into perfect distances to avoid squishing segments
 
