@@ -52,4 +52,8 @@ half g = sqrt(dot(g1, g1) + dot(g2, g2)) * 10.0;
 <em>Unity fog vs Screen-space fog</em>
 </div>
 
+
+
 I feel this adds a unique look to my game, where the paper creases are accentuated. Creating a more immersive paper folded world. Again the issue with this technique is the fog now doesn’t work with transparent objects since they are not on the depth buffer. I’m still working on this but so far the best solution is to increase the edge detection sensitivity by the same fog factor. So even tiny differences in the fog should be visible.
+
+
