@@ -20,7 +20,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
   </ul>
   
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="400" src="/images/HouseAnimBuild.gif" alt="Sky">
 
   <h3><a href="post-processing-urp">Post-Processing in URP </a> </h3>
   <ul>
