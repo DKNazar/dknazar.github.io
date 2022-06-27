@@ -9,8 +9,11 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 <h2 align="center"> Portfolio </h2>
 
 ### [PBR Procedural Sky](procedural-sky)
-
-- *For Cricket 22 we needed a next-gen dynamic sky and weather solution*
+<div align="center">
+<ul>
+<li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
+</ul>
+</div>
 <p align="center">
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 </p>
