@@ -15,7 +15,7 @@ Originally my journey into tools started off as a procedural house builder for t
 This was a very straight forward approach; I hijack the line render tool to create an outline or floor-plan for the house. Then I populate this outline with a library of different house piece quads, like a door section, circle window, square window or other features. To avoid sizing issues the floor-plans can be snapped into perfect distances to avoid squishing segments
 
 <div align="center">
-  <img src="/images/houseEditorSmall.gif"></img>
+  <img src="/images/houseEditorSmall.gif">
 
   <em> House editor with point snapping</em>
 </div>
@@ -23,7 +23,7 @@ This was a very straight forward approach; I hijack the line render tool to crea
 After the quads have been placed I use this outline to create a roof on top. Here I create a polygon of the outline which connects to the wall meshes underneath and then use Delaunay triangulation to fill the roof gap.
 
 <div align="center">
-<img src="/images/roofTop.png" width="50%"></img>
+<img src="/images/roofTop.png" width="50%">
 
 <em>Generated rooftop geometry</em>
 </div>
@@ -31,15 +31,15 @@ After the quads have been placed I use this outline to create a roof on top. Her
 Now this geometry is ready I run a mesh combiner, which grabs all the pieces and combines them into one mesh which is much better for performance. They all use the same material, and UVs been setup in Blender per mesh to align to an atlas texture.
 
 <div align="center">
-<img src="/images/atlas_blender.png" width="50%"></img>
+<img src="/images/atlas_blender.png" width="50%">
 
 <em>Blender house tile setup</em>
 
-<img src="/images/house_atlas0.png" width="50%"></img>
+<img src="/images/house_atlas0.png" width="50%">
 
 <em>Wall textures atlas</em>
 
-<img src="/images/house_atlas1.png" width="50%"></img>
+<img src="/images/house_atlas1.png" width="50%">
 
 <em>Wall materials mask atlas</em>
 </div>
@@ -47,7 +47,7 @@ Now this geometry is ready I run a mesh combiner, which grabs all the pieces and
 This house building system later extended to an entire generic level design tool. I build walls, cliffs, and buildings with a generic version of this tool. Most of my level has been created with this tool, since the aesthetic of folded paper allows for hard edge designs.
 
 <div align="center">
-<img src="/images/floorplan_geo.png" width="50%"></img>
+<img src="/images/floorplan_geo.png" width="50%">
 
 <em>Floor-plan for cliffs + grass plane</em>
 </div>
