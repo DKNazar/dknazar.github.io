@@ -9,7 +9,7 @@ Being a solo dev made me realise how important good tools are to make a game. As
 Originally my journey into tools started off as a procedural house builder for the village and city levels. There are three main components, placing the meshes, creating the roof, and setting up the materials.
 
 <div align="center">
-  <img src="/images/HouseAnimBuild.gif" width="50%"></img>
+  <img src="/images/HouseAnimBuild.gif" width="50%">
 </div>
 
 This was a very straight forward approach; I hijack the line render tool to create an outline or floor-plan for the house. Then I populate this outline with a library of different house piece quads, like a door section, circle window, square window or other features. To avoid sizing issues the floor-plans can be snapped into perfect distances to avoid squishing segments
