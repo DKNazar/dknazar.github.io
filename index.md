@@ -15,21 +15,14 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   </ul>
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-  <h3><a href="level-design-tools-1"> Accidentally Developing a Level Design Tool </a> </h3>
+  <h3><a href="level-design-tool-1"> Accidentally Developing a Level Design Tool </a> </h3>
   <ul>
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
   </ul>
   
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
-  <h3><a href="post-processing-urp"> Post-Processing in URP </a> </h3>
-  <ul>
-  <li><em>Adding a custom post processing step in Unity URP</em></li>
-  </ul>
-
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-
-  <h3><a href="post-processing-urp"> Post-Processing in URP </a> </h3>
+  <h3><a href="post-processing-urp">Post-Processing in URP </a> </h3>
   <ul>
   <li><em>Adding a custom post processing step in Unity URP</em></li>
   </ul>
