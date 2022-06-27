@@ -8,8 +8,8 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
 <h2 align="center"> Portfolio </h2>
 
-### [PBR Procedural Sky](procedural-sky)
 <div align="center">
+  <h3><a href="procedural-sky"> PBR Procedural Sky </a> </h3>
 <ul>
 <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
 </ul>
