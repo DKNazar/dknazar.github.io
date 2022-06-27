@@ -28,7 +28,10 @@ Mie scattering is light spreading through larger particles in the air like mist,
 <h2 align="center">LUTs (Look up tables)</h2>
 
 <div align="center">
-  <img src="/images/clouds_Timelapse.gif" width="50%" />
+  <img src="/images/old_sky.png" width="50%" /><br>
+  <em>Old, blue gradient sky<em/><br><br>
+  <img src="/images/clouds_Timelapse.gif" width="50%" /><br>
+  <em>New PBR sky with procedurally generated volumetric clouds<em/><br><br>
 </div>
 <br>
 
