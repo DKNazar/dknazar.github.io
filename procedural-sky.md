@@ -9,7 +9,10 @@ For Cricket 22 we needed a next-gen sky solution, the artists needed something m
 Originally the task was to create a new cloud system that could use the match weather data as input and be much more dynamic than our old key-frame based system. But before I could even think about clouds I knew we needed to start at the atmosphere.
 
 <div align="center">
-  <img src="/images/clouds_Timelapse.gif" width="50%" />
+  <img src="/images/old_sky.png" width="50%" /><br>
+  <em>Old, blue gradient sky<em/><br><br>
+  <img src="/images/clouds_Timelapse.gif" width="50%" /><br>
+  <em>New PBR sky with procedurally generated volumetric clouds<em/><br><br>
 </div>
 <br>
 
@@ -26,14 +29,6 @@ Rayleigh scattering is light spreading by small atmospheric gas particles, this 
 Mie scattering is light spreading through larger particles in the air like mist, fog or pollution. This is less wavelength dependent and therefore comes off as white.
 
 <h2 align="center">LUTs (Look up tables)</h2>
-
-<div align="center">
-  <img src="/images/old_sky.png" width="50%" /><br>
-  <em>Old, blue gradient sky<em/><br><br>
-  <img src="/images/clouds_Timelapse.gif" width="50%" /><br>
-  <em>New PBR sky with procedurally generated volumetric clouds<em/><br><br>
-</div>
-<br>
 
 The LUTs themselves are encoded by an angle from horizon to UV transformation step. So we need to calculate our horizon angle when sampling the LUT which covers the entire atmosphere.
 
