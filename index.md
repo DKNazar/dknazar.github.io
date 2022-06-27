@@ -13,28 +13,28 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="50%" src="/images/cloud-1.png" alt="Sky">
 
   <h3><a href="level-design-tool-1"> Accidentally Developing a Level Design Tool </a> </h3>
   <ul>
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
   </ul>
   
-  <img width="400" src="/images/HouseAnimBuild.gif" alt="Sky">
+  <img width="50%" href="level-design-tool-1" src="/images/HouseAnimBuild.gif" alt="House building animation">
 
   <h3><a href="post-processing-urp">Post-Processing in URP </a> </h3>
   <ul>
   <li><em>Adding a custom post processing step in Unity URP</em></li>
   </ul>
 
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="50%" a href="post-processing-urp" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
   <h3><a href="moving-to-urp"> Moving to URP </a> </h3>
   <ul>
   <li><em>After many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle</em></li>
   </ul>
 
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="50%" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
   <h3><a href="advancing-water-shader"> Advancing the Water Shader </a> </h3>
   <ul>
