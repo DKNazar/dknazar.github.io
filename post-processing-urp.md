@@ -45,9 +45,10 @@ half g = sqrt(dot(g1, g1) + dot(g2, g2)) * 10.0;
 ```
 
 <div align="center">
-<img src="/images/fog.png" width=50%>
-<img src="/images/ssFog.png" width=50%>
-
+ 
+<img src="/images/fog.png" width=50% />
+<img src="/images/ssFog.png" width=50% />
+<br>
 <em>Unity fog vs Screen-space fog</em>
 </div>
 
