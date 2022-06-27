@@ -38,7 +38,7 @@ The LUTs themselves are encoded by an angle from horizon to UV transformation st
   <img src="/images/atmos_paper_fig1.png" width="40%" /><br>
   <em>Multi-scatter LUT example<em/><br><br>
 </div>
-<br>
+   
 
 Firstly, the Transmittance LUT is computed, this determines how much sun light is shadowed by the atmosphere ozone (how much light makes it through at that point).
 
