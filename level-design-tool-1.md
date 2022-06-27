@@ -17,9 +17,9 @@ todo: housebuild gif
 This was a very straight forward approach; I hijack the line render tool to create an outline or floor-plan for the house. Then I populate this outline with a library of different house piece quads, like a door section, circle window, square window or other features. To avoid sizing issues the floor-plans can be snapped into perfect distances to avoid squishing segments
 
 <div align="center">
-<img src="/images/houseEditorSmall.gif"> </img>
+  <img src="/images/houseEditorSmall.gif"></img>
 
-<em>House editor with point snapping</em>
+  <em> House editor with point snapping</em>
 </div>
 
 After the quads have been placed I use this outline to create a roof on top. Here I create a polygon of the outline which connects to the wall meshes underneath and then use Delaunay triangulation to fill the roof gap.
