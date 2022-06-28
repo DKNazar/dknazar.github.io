@@ -9,6 +9,8 @@ permalink: /origami-ninja-star/
 </div>
 <br>
 
+Status: In development during my spare time!
+
 Follow Twitter to see latest updates: [@Dono_Arts](https://twitter.com/dono_arts)
 
 Steam: [https://store.steampowered.com/app/1147910/Origami_Ninja_Star/](https://store.steampowered.com/app/1147910/Origami_Ninja_Star/)
