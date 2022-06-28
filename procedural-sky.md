@@ -16,11 +16,11 @@ Originally the task was to create a new cloud system that could use the match we
 </div>
 <br>
 
-<h2 align="center">Physically Based Atmosphere</h2>
+<h2 align="center">Physically Based Atmosphere</h2><hr>
 
 The old sky was a completely unmaintained gradient, with crazy HDR values which destroyed the auto-exposure and tone-mapping (a whole other topic). So the first step was to investigate state of the art techniques in PBR atmospheres. The most popular was a series of precomputed LUTs by [Bruneton and Neyr](https://ebruneton.github.io/precomputed_atmospheric_scattering/). These LUTs included transmittance, scattering, and irradiance to build a realistic Earth sky. Although they were generally too expensive to compute in real-time, I imagine most games would slowly compute over time or blend prebaked LUTs. But a more recent paper from [Hillaire](https://sebh.github.io/publications/egsr2020.pdf) at Epic Games took the Bruneton method and reduced the complexity, specifically in the light scattering steps. This sky was faster and much more scalable with the intention to work on mobile.
 
-<h2 align="center">Atmosphere Components</h2>
+<h2 align="center">Atmosphere Components</h2><hr>
 
 The papers provide details and implementations but I’ll give a brief overview. The sky functions with three LUTs computed using atmosphere parameters as inputs. These parameters include sun direction, sun illuminance, Mie scattering and Rayleigh scattering co-efficients.
 
@@ -28,7 +28,7 @@ Rayleigh scattering is light spreading by small atmospheric gas particles, this 
 
 Mie scattering is light spreading through larger particles in the air like mist, fog or pollution. This is less wavelength dependent and therefore comes off as white.
 
-<h2 align="center">LUTs (Look up tables)</h2>
+<h2 align="center">LUTs (Look up tables)</h2><hr>
 
 The LUTs themselves are encoded by an angle from horizon to UV transformation step. So we need to calculate our horizon angle when sampling the LUT which covers the entire atmosphere.
 
@@ -68,7 +68,8 @@ Now that all our LUTs are computed we use the Sky-View LUT in our ray-march wher
 Now that we have a beautiful atmosphere we need the sun to be correctly positioned. Since we are a simulation game, we need to convert our time and location into an accurate sun to get exact shadows. A paper by [Zhang](https://www.sciencedirect.com/science/article/pii/S0960148121004031) describes a simplified method to calculate this exact thing in polar co-ordinates. Implementing this as input to our atmosphere meant we have realistic sun positions for all stadiums. Which also when we discovered that all stadiums were setup incorrectly, and believed they were in Australia.
 A great test for this was [Svalbard](https://www.visitnorway.com/things-to-do/nature-attractions/midnight-sun/), Norway where during summer the sun never sets. While I imagine no one plays cricket that north, it is fantastic to see if we wanted to in our game the sun would never set accurately!
 
-<h2 align="center">Volumetric Clouds</h2>
+
+<h2 align="center">Volumetric Clouds</h2><hr>
 
 Now the sky is done, we need clouds!
 My personal goal was to make a completely procedural system without need for artists to interfere, unless they wanted to. Reading many different cloud rendering techniques the closest one to our needs was from [Guerrilla Games](https://www.guerrilla-games.com/read/nubis-authoring-real-time-volumetric-cloudscapes-with-the-decima-engine) for Horizon Zero Dawn.
@@ -105,7 +106,7 @@ Guerrilla clouds were made to create dramatic cloudscapes for their fantasy game
 </div>
 <br>
 
-<h3 align="center">Results</h3>
+<h3 align="center">Results</h3><hr>
 
 <div align="center">
   <img src="/images/cloud-1.png" width="600" /><br>
@@ -113,9 +114,9 @@ Guerrilla clouds were made to create dramatic cloudscapes for their fantasy game
   <img src="/images/cloud-3.png" width="600" /><br>
 </div>
 <br>
-  
 <br>
-<h2 align="center">Optimisations</h2>
+<br>
+<h2 align="center">Optimisations</h2><hr>
 
 This is very implementation specific, but the original Guerrilla Games optimisations are the major factors. These include doing large ray-march steps when not intersecting clouds, more aggressive stencil-testing, and reprojecting across frames. The reprojecting step is the most complicated where you render the clouds at 1/4 resolution and update those select pixels over, slowly building the full frame.
 
@@ -129,5 +130,5 @@ This is very implementation specific, but the original Guerrilla Games optimisat
 <br>
   
 One key difference is Guerilla Games is a Sony studio meaning they built for PS4 which is faster than an Xbox One. On Xbox the noise texture sampling was hitting bandwidth limits hard, the biggest performance increase was to lower the 3D volume textures bits from R32F to R16 and even R8 if needed. It had very little visual impact and made Xbox One very playable with the sky.
-
-    
+<br>
+<br>
