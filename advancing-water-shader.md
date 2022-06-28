@@ -59,11 +59,11 @@ Thanks to our tessellation the waves will always have excellent detail with the 
 Now we can use the normal in physics calculations.
 
 <div align="center">
-<img src="/images/WaterNormals.gif" width="400">
+<img src="/images/WaterNormals.gif" width="400" /><br>
 
-<em>Surface point (red), Surface normal (blue)</em>
+<em>Surface point (red), Surface normal (blue)</em><br>
 
-<img src="/images/WaterNormalsMoving.gif" width="400">
+<img src="/images/WaterNormalsMoving.gif" width="400" /><br>
 
 <em>With moving rigid-bodies</em>
 </div>
