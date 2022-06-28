@@ -46,7 +46,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>Improving one of my first shaders for Origami Ninja Star, and making it more interactive</em></li>
   </ul>
 
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="400" src="/images/WaterEditor.gif" alt="Water editor">
 
   
   <h3><a href="origami-ninja-star"> Origami Ninja Star </a> </h3>
