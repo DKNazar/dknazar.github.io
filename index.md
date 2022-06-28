@@ -33,7 +33,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <a href="post-processing-urp"><img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky"></a>
 
   
-  <h3Moving to URP</h3>
+  <h3>Moving to URP</h3>
   <ul>
   <li><em>After many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle</em></li>
   </ul>
