@@ -74,31 +74,34 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <ul>
   <li><em>Game based on real science for high-school students to increase interest in STEM (Science, Technology, Engineering and Mathematics) professions</em></li>
   </ul>
-
+  <a href="https://dknazar.wordpress.com/portfolio/escape-from-space/" target="_blank">
   <img width="600" src="https://dknazar.files.wordpress.com/2018/03/6a8efe54544513-596208ab2e2a8.png" alt="Escape from Space">
+  </a>
   <hr>
   
   <h3>Grass Shader in UE4 and Unity</h3>
   <ul>
   <li><em>After playing Breath of the Wild, my only question was how to make that beautiful grass!</em></li>
   </ul>
-
-  <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <a href="https://dknazar.wordpress.com/portfolio/grass-shader-in-ue4-and-unity/" target="_blank">
+  <img width="600" src="https://dknazar.files.wordpress.com/2018/06/gifcut.gif" alt="grass">
+  </a>
   <hr>
   
   <h3>Terrain Generation Algorithms</h3>
   <ul>
   <li><em>I decided to research common terrain generation algorithms in games. This was inspired by Sean Murray’s GDC talk “Building Worlds in No Man’s Sky Using Math(s)”</em></li>
   </ul>
-
-  <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-  
+  <a href="https://dknazar.wordpress.com/portfolio/testing-common-terrain-generation-algorithms/" target="blank_">
+  <img width="600" src="https://dknazar.files.wordpress.com/2018/06/fbm-x40-8oct.png" alt="Generated terrain">
+  </a>
   
   <h3>Character Modelling</h3>
   <ul>
   <li><em>In this project I was give a random animal and attribute, I got “Party-animal” and “Lizard." Woohoo....</em></li>
   </ul>
-
-  <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <a href="https://dknazar.wordpress.com/portfolio/3d-art-character-modelling/" target="blank_">
+  <img width="600" src="https://user-images.githubusercontent.com/9927690/176175075-8f63057a-cce8-48c3-af90-d3142917b03c.png" alt="Lizard pirate">
+  </a>
 </div>
 
