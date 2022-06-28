@@ -14,7 +14,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
-  <a href="procedural-sky"><img width="50%" src="/images/cloud-1.png" alt="Sky"></a>
+  <a href="procedural-sky"><img width="800" src="/images/cloud-1.png" alt="Sky"></a>
 
   
   <h3><a href="level-design-tool-1"> Accidentally Developing a Level Design Tool </a> </h3>
@@ -22,7 +22,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
   </ul>
   
-  <a href="level-design-tool-1"><img width="50%" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
+  <a href="level-design-tool-1"><img width="70%" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
 
   
   <h3><a href="post-processing-urp">Post-Processing in URP </a> </h3>
@@ -30,7 +30,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>Adding a custom post processing step in Unity URP</em></li>
   </ul>
 
-  <img width="50%" href="post-processing-urp" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="800" href="post-processing-urp" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 
   
   <h3><a href="moving-to-urp"> Moving to URP </a> </h3>
