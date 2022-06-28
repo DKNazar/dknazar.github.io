@@ -8,7 +8,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
 <h2 align="center"> Portfolio </h2>
 
-<div align="center">
+<div>
   
   <h3>PBR Procedural Sky</h3>
   <ul>
