@@ -37,11 +37,11 @@ Another issue was water detail was lacking with this method due to the lack of p
 Now finally the purpose of all these components is to make the water physical. In Origami Ninja Star you can surf the water and waves. For waves a more realistic approach is to use [Gerstner waves](https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-1-effective-water-simulation-physical-models), which look great but I feel are a bit excessive for my more stylised game. So instead I’m using a simple Sin wave + simplex noise to add visual variation. This is more performant and easy to use later on.
 
 <div align="center"><br>
-<img src="/images/wave_no_tess.png" width="400" />
+<img src="/images/wave_no_tess.png" width="400" /><br>
 
-<em> No tessellation wave</em>
+<em> No tessellation wave</em><br>
 
-<img src="/images/wave_tess.png" width="400" />
+<img src="/images/wave_tess.png" width="400" /><br>
 
 <em> With tessellation wave</em><br>
 </div>
