@@ -9,7 +9,8 @@ One of my first shaders was the [“water-coloured”](https://dknazar.wordpress
 <div align="center">
 todo:images old water vs new water
   
-  <img src="/images/waterfallspec.gif">
+  ![gif](/images/waterfallspec.gif)
+
   <em> New water </em>
 </div>
 
