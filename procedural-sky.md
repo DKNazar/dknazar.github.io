@@ -9,9 +9,9 @@ For Cricket 22 we needed a next-gen sky solution, the artists needed something m
 Originally the task was to create a new cloud system that could use the match weather data as input and be much more dynamic than our old key-frame based system. But before I could even think about clouds I knew we needed to start at the atmosphere.
 
 <div align="center">
-  <img src="/images/old_sky.png" width="50%" /><br>
+  <img src="/images/old_sky.png" width="600" /><br>
   <em>Old, blue gradient sky</em><br><br>
-  <img src="/images/clouds_Timelapse.gif" width="50%" /><br>
+  <img src="/images/clouds_Timelapse.gif" width="600" /><br>
   <em>New PBR sky with procedurally generated volumetric clouds</em><br><br>
 </div>
 <br>
@@ -33,9 +33,9 @@ Mie scattering is light spreading through larger particles in the air like mist,
 The LUTs themselves are encoded by an angle from horizon to UV transformation step. So we need to calculate our horizon angle when sampling the LUT which covers the entire atmosphere.
 
 <div align="center">
-  <img src="/images/atmos_paper_fig2.png" width="40%" /><br>
+  <img src="/images/atmos_paper_fig2.png" width="400" /><br>
   <em>Sky-View LUT example</em><br><br>
-  <img src="/images/atmos_paper_fig1.png" width="40%" /><br>
+  <img src="/images/atmos_paper_fig1.png" width="400" /><br>
   <em>Multi-scatter LUT example</em><br><br>
 </div>
    
@@ -47,9 +47,9 @@ Then using Transmittance, the Multi-Scatter LUT is computed which calculates mul
 Lastly the Sky-View LUT uses these tables to calculate the Mie and Rayleigh scattering results which gives us the colour in the sky.
 
 <div align="center">
-  <img src="/images/transmittance.jpg" width="40%" /><br>
+  <img src="/images/transmittance.jpg" width="400" /><br>
   <em>Transmittance LUT</em><br><br>
-  <img src="/images/skyview.jpg" width="40%"><br>
+  <img src="/images/skyview.jpg" width="400"><br>
   <em>Sky-View LUT</em><br><br>
 </div>
 <br>
@@ -58,9 +58,9 @@ Now that all our LUTs are computed we use the Sky-View LUT in our ray-march wher
     
     
 <div align="center">
-  <img src="/images/sky_early.png" width="50%" /><br>
+  <img src="/images/sky_early.png" width="600" /><br>
   <em>Much better than a gradient</em><br><br>
-  <img src="/images/boys_in_void.png" width="50%" /><br>
+  <img src="/images/boys_in_void.png" width="600" /><br>
   <em>The void!</em><br><br>
 </div>
 <br>
@@ -76,9 +76,9 @@ My personal goal was to make a completely procedural system without need for art
 They used two 3D volume noise textures specifically made to emulate the density of clouds. It is then ray-marched while filtering it through a weather map which influences cloud density by height, position, and precipitation.
 
 <div align="center">
-  <img src="/images/noiseLow.jpg" width="25%" /><br>
+  <img src="/images/noiseLow.jpg" width="200" /><br>
   <em>Low Frequency Perlin-Worely Noise</em><br><br>
-  <img src="/images/noiseHigh.jpg" width="25%" /><br>
+  <img src="/images/noiseHigh.jpg" width="200" /><br>
   <em>High Frequency Perlin-Worely Noise</em><br><br>
 </div>
 <br>
@@ -86,7 +86,7 @@ They used two 3D volume noise textures specifically made to emulate the density 
 Luckily a lot of the setup was already done for our sky atmosphere ray-march so I just needed to add clouds to the march. The lighting equation is surprisingly simple through [Beer’s law](https://en.wikipedia.org/wiki/Beer%E2%80%93Lambert_law) and the aptly named “powdered sugar” effect. But other factors such as clouds shadowing themselves requires cone sampling adjacent clouds towards the sun which adds complexity. After much trial and error, I finally got a decent looking lighting model.
 
 <div align="center">
-  <img src="/images/oldlapse.gif" width="50%" /><br>
+  <img src="/images/oldlapse.gif" width="600" /><br>
   <em>Early time-lapse of our volumetric clouds</em><br><br>
 </div>
 <br>
@@ -97,19 +97,20 @@ Guerrilla clouds were made to create dramatic cloudscapes for their fantasy game
 
 <br>
 <div align="center">
-  <img src="/images/weather_mapRG.jpg" width="30%" /><br>
-  <img src="/images/weather_mapHeight.jpg" width="20%" />
-  <img src="/images/weather_map.jpg" width="20%" />
-  <br>
+  <img src="/images/weather_mapRG.jpg" width="400" /><br>
+  <img src="/images/weather_mapHeight.jpg" width="300" />
+  <img src="/images/weather_map.jpg" width="300" />
+  <br><br>
   This is an example of our weather map, red is cloud coverage, green is cloud type (stratus, cumulus, cumulonimbus).
 </div>
 <br>
 
+<h3 align="center">Results</h3>
 
 <div align="center">
-  <img src="/images/cloud-1.png" width="50%" /><br>
-  <img src="/images/cloud-2.png" width="50%" /><br>
-  <img src="/images/cloud-3.png" width="50%" /><br>
+  <img src="/images/cloud-1.png" width="600" /><br>
+  <img src="/images/cloud-2.png" width="600" /><br>
+  <img src="/images/cloud-3.png" width="600" /><br>
 </div>
 <br>
   
@@ -120,9 +121,9 @@ This is very implementation specific, but the original Guerrilla Games optimisat
 
 
 <div align="center">
-  <img src="/images/stencil-test.png" width="50%" /><br>
+  <img src="/images/stencil-test.png" width="400" /><br>
   <em>Stencil-test of stadium vs sky</em><br><br>
-  <img src="/images/reprojectionmeme.png" width="50%" /><br>
+  <img src="/images/reprojectionmeme.png" width="400" /><br>
   <em>Reprojection only matters where we see the sky</em><br><br>
 </div>
 <br>
