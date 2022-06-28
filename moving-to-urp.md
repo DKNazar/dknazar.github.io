@@ -164,3 +164,5 @@ These need to be setup and maintained to match Unity’s shading pipeline. While
 ```
 
 While this workflow is isn’t perfect and a bit messy to maintain, it does give me great control over URP shaders, meaning I can easily add features such as tessellation which is currently not possible with shader graph.
+
+<br><br><br>
