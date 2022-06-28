@@ -11,7 +11,7 @@ permalink: /origami-ninja-star/
 
 Follow Twitter to see latest updates: [@Dono_Arts](https://twitter.com/dono_arts)
 
-Steam: https://store.steampowered.com/app/1147910/Origami_Ninja_Star/
+Steam: [https://store.steampowered.com/app/1147910/Origami_Ninja_Star/](https://store.steampowered.com/app/1147910/Origami_Ninja_Star/)
 
 Origami Ninja Star is a chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Slice into a colourful paper world where everyone is folded differently, and your destiny is to destroy everyone in your way. As the self-appointed protector of your village, use your unfolding technique to switch between a nimble paper ball and a deadly ninja star. Harness momentum as the Ball to traverse and ricochet through levels, then unleash it as the Star to strike enemies with precision.
 
