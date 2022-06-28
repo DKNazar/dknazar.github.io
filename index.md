@@ -10,6 +10,8 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
 <h2 align="center"> Portfolio </h2>
 
+Note: I am currently transitioning to github from my old wordpress site, some items will still link to the old website!
+
 <div>
   
   <h3>PBR Procedural Sky</h3>
@@ -55,8 +57,8 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <ul>
   <li><em>Chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Currently in development</em></li>
   </ul>
-  <a href="advancing-water-shader">
-  <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <a href="origami-ninja-star">
+  <img width="600" src="/images/capsule_main.png" alt="Origami Ninja Star">
   </a>
   <hr>
   
@@ -65,7 +67,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>For my final year 3D Animation project I chose to develop a procedural art tool to create Flora for games and animation in Maya</em></li>
   </ul>
 
-  <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <a href="https://dknazar.wordpress.com/portfolio/flora-generator/" target="_blank"><img width="600" src="https://dknazar.files.wordpress.com/2018/11/demorender.png" alt="flora generated in maya"></a>
   <hr>
   
   <h3>Escape From Space</h3>
@@ -73,7 +75,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <li><em>Game based on real science for high-school students to increase interest in STEM (Science, Technology, Engineering and Mathematics) professions</em></li>
   </ul>
 
-  <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
+  <img width="600" src="https://dknazar.files.wordpress.com/2018/03/6a8efe54544513-596208ab2e2a8.png" alt="Escape from Space">
   <hr>
   
   <h3>Grass Shader in UE4 and Unity</h3>
@@ -99,39 +101,4 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
   <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
 </div>
- 
-You can use the [editor on GitHub](https://github.com/DKNazar/dknazar.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/DKNazar/dknazar.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
