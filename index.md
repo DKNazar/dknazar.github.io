@@ -1,6 +1,8 @@
 <h1 align="center"> DKNazar Game Dev </h1>
 
-todo: logo images
+<div align="center">
+<img width="200" src="/images/DanceStar-min.gif" alt="SDancing star gif">
+</div>
 
 <h3 align="center"> About me </h3>
 
@@ -14,8 +16,8 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
-  <a href="procedural-sky"> <img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
-
+  <a href="procedural-sky"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  <hr>
   
   <h3> Accidentally Developing a Level Design Tool</h3>
   <ul>
@@ -23,39 +25,40 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   </ul>
   
   <a href="level-design-tool-1"><img width="600" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
-
+  <hr>
   
   <h3>Post-Processing in URP </h3>
   <ul>
   <li><em>Adding a custom post processing step in Unity URP</em></li>
   </ul>
 
-  <a href="post-processing-urp"><img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky"></a>
-
+  <a href="post-processing-urp"><img width="600" src="/images/fog.png" alt="game image with post-processing"></a>
+  <hr>
   
   <h3>Moving to URP</h3>
   <ul>
   <li><em>After many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle</em></li>
   </ul>
 
-  <a href="post-processing-urp"><img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky"></a>
-
+  <a href="moving-to-urp"><img width="600" src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-06/Gigaya%20Hero%20Shot.jpg" alt="Unity urp hero shot"></a>
+  <hr>
   
   <h3>Advancing the Water Shader</h3>
   <ul>
   <li><em>Improving one of my first shaders for Origami Ninja Star, and making it more interactive</em></li>
   </ul>
 
-  <img width="600" src="/images/WaterEditor.gif" alt="Water editor">
-
+  <a href="advancing-water-shader"><img width="600" src="/images/WaterEditor.gif" alt="Water editor"></a>
+  <hr>
   
   <h3>Origami Ninja Star</h3>
   <ul>
   <li><em>Chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Currently in development</em></li>
   </ul>
-
+  <a href="advancing-water-shader">
   <img width="400" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-
+  </a>
+  <hr>
   
   <h3>Flora Generator (Maya)</h3>
   <ul>
@@ -63,7 +66,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   </ul>
 
   <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-  
+  <hr>
   
   <h3>Escape From Space</h3>
   <ul>
@@ -71,7 +74,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   </ul>
 
   <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-  
+  <hr>
   
   <h3>Grass Shader in UE4 and Unity</h3>
   <ul>
@@ -79,7 +82,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
   </ul>
 
   <img width="600" src="https://user-images.githubusercontent.com/9927690/175769991-b1a08428-98b9-444b-adc9-80b0b6773fa9.png" alt="Sky">
-
+  <hr>
   
   <h3>Terrain Generation Algorithms</h3>
   <ul>
