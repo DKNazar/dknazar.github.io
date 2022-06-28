@@ -11,7 +11,7 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 <h2 align="center"> Portfolio </h2>
 <hr>
 Note: I am currently transitioning to github from my old wordpress site, some items will still link to the old website!
-<hr>
+<hr><br>
 <div>
   
   <h3>PBR Procedural Sky</h3>
@@ -19,7 +19,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
   <a href="procedural-sky"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
-  <hr>
+  <hr><br>
   
   <h3> Accidentally Developing a Level Design Tool</h3>
   <ul>
@@ -27,7 +27,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   </ul>
   
   <a href="level-design-tool-1"><img width="600" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
-  <hr>
+  <hr><br>
   
   <h3>Post-Processing in URP </h3>
   <ul>
@@ -35,7 +35,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   </ul>
 
   <a href="post-processing-urp"><img width="600" src="/images/fog.png" alt="game image with post-processing"></a>
-  <hr>
+  <hr><br>
   
   <h3>Moving to URP</h3>
   <ul>
@@ -43,7 +43,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   </ul>
 
   <a href="moving-to-urp"><img width="600" src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-06/Gigaya%20Hero%20Shot.jpg" alt="Unity urp hero shot"></a>
-  <hr>
+  <hr><br>
   
   <h3>Advancing the Water Shader</h3>
   <ul>
@@ -51,7 +51,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   </ul>
 
   <a href="advancing-water-shader"><img width="600" src="/images/WaterEditor.gif" alt="Water editor"></a>
-  <hr>
+  <hr><br>
   
   <h3>Origami Ninja Star</h3>
   <ul>
@@ -60,7 +60,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <a href="origami-ninja-star">
   <img width="600" src="/images/capsule_main.png" alt="Origami Ninja Star">
   </a>
-  <hr>
+  <hr><br>
   
   <h3>Flora Generator (Maya)</h3>
   <ul>
@@ -68,7 +68,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   </ul>
 
   <a href="https://dknazar.wordpress.com/portfolio/flora-generator/" target="_blank"><img width="600" src="https://dknazar.files.wordpress.com/2018/11/demorender.png" alt="flora generated in maya"></a>
-  <hr>
+  <hr><br>
   
   <h3>Escape From Space</h3>
   <ul>
@@ -77,7 +77,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <a href="https://dknazar.wordpress.com/portfolio/escape-from-space/" target="_blank">
   <img width="600" src="https://dknazar.files.wordpress.com/2018/03/6a8efe54544513-596208ab2e2a8.png" alt="Escape from Space">
   </a>
-  <hr>
+  <hr><br>
   
   <h3>Grass Shader in UE4 and Unity</h3>
   <ul>
@@ -86,7 +86,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <a href="https://dknazar.wordpress.com/portfolio/grass-shader-in-ue4-and-unity/" target="_blank">
   <img width="600" src="https://dknazar.files.wordpress.com/2018/06/gifcut.gif" alt="grass">
   </a>
-  <hr>
+  <hr><br>
   
   <h3>Terrain Generation Algorithms</h3>
   <ul>
@@ -95,6 +95,7 @@ Note: I am currently transitioning to github from my old wordpress site, some it
   <a href="https://dknazar.wordpress.com/portfolio/testing-common-terrain-generation-algorithms/" target="blank_">
   <img width="600" src="https://dknazar.files.wordpress.com/2018/06/fbm-x40-8oct.png" alt="Generated terrain">
   </a>
+  <hr><br>
   
   <h3>Character Modelling</h3>
   <ul>
