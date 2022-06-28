@@ -10,9 +10,9 @@ Originally the task was to create a new cloud system that could use the match we
 
 <div align="center">
   <img src="/images/old_sky.png" width="50%" /><br>
-  <em>Old, blue gradient sky<em/><br><br>
+  <em>Old, blue gradient sky</em><br><br>
   <img src="/images/clouds_Timelapse.gif" width="50%" /><br>
-  <em>New PBR sky with procedurally generated volumetric clouds<em/><br><br>
+  <em>New PBR sky with procedurally generated volumetric clouds</em><br><br>
 </div>
 <br>
 
@@ -34,9 +34,9 @@ The LUTs themselves are encoded by an angle from horizon to UV transformation st
 
 <div align="center">
   <img src="/images/atmos_paper_fig2.png" width="40%" /><br>
-  <em>Sky-View LUT example<em/><br><br>
+  <em>Sky-View LUT example</em><br><br>
   <img src="/images/atmos_paper_fig1.png" width="40%" /><br>
-  <em>Multi-scatter LUT example<em/><br><br>
+  <em>Multi-scatter LUT example</em><br><br>
 </div>
    
 
@@ -48,9 +48,9 @@ Lastly the Sky-View LUT uses these tables to calculate the Mie and Rayleigh scat
 
 <div align="center">
   <img src="/images/transmittance.jpg" width="40%" /><br>
-  <em>Transmittance LUT<em/><br><br>
+  <em>Transmittance LUT</em><br><br>
   <img src="/images/skyview.jpg" width="40%"><br>
-  <em>Sky-View LUT<em/><br><br>
+  <em>Sky-View LUT</em><br><br>
 </div>
 <br>
 
@@ -59,9 +59,9 @@ Now that all our LUTs are computed we use the Sky-View LUT in our ray-march wher
     
 <div align="center">
   <img src="/images/sky_early.png" width="50%" /><br>
-  <em>Much better than a gradient<em/><br><br>
+  <em>Much better than a gradient</em><br><br>
   <img src="/images/boys_in_void.png" width="50%" /><br>
-  <em>The void!<em/><br><br>
+  <em>The void!</em><br><br>
 </div>
 <br>
 
@@ -77,9 +77,9 @@ They used two 3D volume noise textures specifically made to emulate the density 
 
 <div align="center">
   <img src="/images/noiseLow.jpg" width="25%" /><br>
-  <em>Low Frequency Perlin-Worely Noise<em/><br><br>
+  <em>Low Frequency Perlin-Worely Noise</em><br><br>
   <img src="/images/noiseHigh.jpg" width="25%" /><br>
-  <em>High Frequency Perlin-Worely Noise<em/><br><br>
+  <em>High Frequency Perlin-Worely Noise</em><br><br>
 </div>
 <br>
 
@@ -87,7 +87,7 @@ Luckily a lot of the setup was already done for our sky atmosphere ray-march so 
 
 <div align="center">
   <img src="/images/oldlapse.gif" width="50%" /><br>
-  <em>Early time-lapse of our volumetric clouds<em/><br><br>
+  <em>Early time-lapse of our volumetric clouds</em><br><br>
 </div>
 <br>
     
@@ -121,9 +121,9 @@ This is very implementation specific, but the original Guerrilla Games optimisat
 
 <div align="center">
   <img src="/images/stencil-test.png" width="50%" /><br>
-  <em>Stencil-test of stadium vs sky<em/><br><br>
+  <em>Stencil-test of stadium vs sky</em><br><br>
   <img src="/images/reprojectionmeme.png" width="50%" /><br>
-  <em>Reprojection only matters where we see the sky<em/><br><br>
+  <em>Reprojection only matters where we see the sky</em><br><br>
 </div>
 <br>
   
