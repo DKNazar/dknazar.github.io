@@ -10,7 +10,7 @@ Being a solo dev made me realise how important good tools are to make a game. As
 Originally my journey into tools started off as a procedural house builder for the village and city levels. There are three main components, placing the meshes, creating the roof, and setting up the materials.
 
 <div align="center">
-  <img src="/images/HouseAnimBuild.gif" width="600" /">
+  <img src="/images/HouseAnimBuild.gif" width="600" />
 </div>
 <br>
 
