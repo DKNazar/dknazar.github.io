@@ -24,16 +24,16 @@ This is the interface for the material to set values from the unity inspector to
 ```
 Shader "Origami/SimpleLitKeyable" {
 	Properties {
-		[MainTexture] _BaseMap("Base Map (RGB) Smoothness / Alpha (A)", 2D) = "white" {}
+	[MainTexture] _BaseMap("Base Map (RGB) Smoothness / Alpha (A)", 2D) = "white" {}
         [MainColor]   _BaseColor("Base Color", Color) = (1, 1, 1, 1)
 
-		[Space(20)]
-		_KeyTex("Keying Map (RGB)", 2D) = "white" {}
-		_KeyColor1("Key Color 1", Color) = (1, 1, 1, 1)
-		_KeyColor2("Key Color 2", Color) = (1, 1, 1, 1)
+	[Space(20)]
+	_KeyTex("Keying Map (RGB)", 2D) = "white" {}
+	_KeyColor1("Key Color 1", Color) = (1, 1, 1, 1)
+	_KeyColor2("Key Color 2", Color) = (1, 1, 1, 1)
 
-		[Toggle(_NORMALMAP)] _NormalMapToggle ("Normal Mapping", Float) = 0
-		_BumpMap("Normal Map", 2D) = "bump" {}
+	[Toggle(_NORMALMAP)] _NormalMapToggle ("Normal Mapping", Float) = 0
+	_BumpMap("Normal Map", 2D) = "bump" {}
 ```
 
 <h3 align="left">Shader Features:</h3>
@@ -41,21 +41,21 @@ Shader "Origami/SimpleLitKeyable" {
 These all define what features we want in the shader, some are attached to the properties interface but if we want a certain feature we can force it on/off here.
 
 ```
-  HLSLPROGRAM
-			#pragma vertex LitPassVertex
-			#pragma fragment LitPassFragment
+HLSLPROGRAM
+	#pragma vertex LitPassVertex
+	#pragma fragment LitPassFragment
 
-			// Material Keywords, toggleable in inspector
-			#pragma shader_feature_local _NORMALMAP
-            #pragma shader_feature_local_fragment _EMISSION
-            #pragma shader_feature_local _RECEIVE_SHADOWS_OFF
-            //#pragma shader_feature_local_fragment _SURFACE_TYPE_TRANSPARENT
-            #pragma shader_feature_local_fragment _ALPHATEST_ON
-            #pragma shader_feature_local_fragment _ALPHAPREMULTIPLY_ON
-            //#pragma shader_feature_local_fragment _ _SPECGLOSSMAP _SPECULAR_COLOR
-			#pragma shader_feature_local_fragment _ _SPECGLOSSMAP
-			#define _SPECULAR_COLOR // always on
-            #pragma shader_feature_local_fragment _GLOSSINESS_FROM_BASE_ALPHA
+	// Material Keywords, toggleable in inspector
+	#pragma shader_feature_local _NORMALMAP
+        #pragma shader_feature_local_fragment _EMISSION
+        #pragma shader_feature_local _RECEIVE_SHADOWS_OFF
+        //#pragma shader_feature_local_fragment _SURFACE_TYPE_TRANSPARENT
+        #pragma shader_feature_local_fragment _ALPHATEST_ON
+        #pragma shader_feature_local_fragment _ALPHAPREMULTIPLY_ON
+        //#pragma shader_feature_local_fragment _ _SPECGLOSSMAP _SPECULAR_COLOR
+	#pragma shader_feature_local_fragment _ _SPECGLOSSMAP
+	#define _SPECULAR_COLOR // always on
+        #pragma shader_feature_local_fragment _GLOSSINESS_FROM_BASE_ALPHA
 ```
 <h3 align="left"> CBuffer section:</h3>
 
@@ -63,62 +63,62 @@ It is important to take care here since one of SRP’s biggest features is its C
 
 ```
   HLSLINCLUDE
-			#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-			TEXTURE2D(_KeyTex);
-			SAMPLER(sampler_KeyTex);
+	#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+	TEXTURE2D(_KeyTex);
+	SAMPLER(sampler_KeyTex);
 
-			CBUFFER_START(UnityPerMaterial)
-			float4 _BaseMap_ST;
-			float4 _BumpMap_ST;
-			float4 _BaseColor;
-			float4 _EmissionColor;
-			float4 _SpecColor;
-			float4 _KeyColor1;
-			float4 _KeyColor2;
-			float _Cutoff;
-			float _Smoothness;
-			float _EmissionAmount;
-			CBUFFER_END
+	CBUFFER_START(UnityPerMaterial)
+	float4 _BaseMap_ST;
+	float4 _BumpMap_ST;
+	float4 _BaseColor;
+	float4 _EmissionColor;
+	float4 _SpecColor;
+	float4 _KeyColor1;
+	float4 _KeyColor2;
+	float _Cutoff;
+	float _Smoothness;
+	float _EmissionAmount;
+	CBUFFER_END
   ENDHLSL
 ```
 <h3 align="left">Shader Features:</h3>
 Each pass URP requires is declared here, you only need to worry about the forward pass unless you are moving vertices, like a wind shader. In that case you will need to do the same vert displacement in each pass. This is important otherwise you will get very odd behaviour in terms of clipping, or in post-processing effects.
 
 ```
-    Pass {
-			Name "ForwardLit"
-			Tags { "LightMode"="UniversalForward" }
+Pass {
+	Name "ForwardLit"
+	Tags { "LightMode"="UniversalForward" }
 
-			HLSLPROGRAM
-			#pragma vertex LitPassVertex
-			#pragma fragment LitPassFragment
+	HLSLPROGRAM
+	#pragma vertex LitPassVertex
+	#pragma fragment LitPassFragment
       ...
     }
     // ShadowCaster, for casting shadows
-		Pass {
-			Name "ShadowCaster"
-			Tags { "LightMode"="ShadowCaster" }
+Pass {
+	Name "ShadowCaster"
+	Tags { "LightMode"="ShadowCaster" }
 
-			ZWrite On
-			ZTest LEqual
+	ZWrite On
+	ZTest LEqual
 
-			HLSLPROGRAM
-			#pragma vertex ShadowPassVertex
-			#pragma fragment ShadowPassFragment
+	HLSLPROGRAM
+	#pragma vertex ShadowPassVertex
+	#pragma fragment ShadowPassFragment
       ...
       }
     // DepthOnly, used for Camera Depth Texture (if cannot copy depth buffer instead, and the DepthNormals below isn't used)
-		Pass {
-			Name "DepthOnly"
-			Tags { "LightMode"="DepthOnly" }
+Pass {
+	Name "DepthOnly"
+	Tags { "LightMode"="DepthOnly" }
 
-			ColorMask 0
-			ZWrite On
-			ZTest LEqual
+	ColorMask 0
+	ZWrite On
+	ZTest LEqual
 
-			HLSLPROGRAM
-			#pragma vertex DepthOnlyVertex
-			#pragma fragment DepthOnlyFragment
+	HLSLPROGRAM
+	#pragma vertex DepthOnlyVertex
+	#pragma fragment DepthOnlyFragment
       ...
       }
 ```
@@ -128,39 +128,39 @@ Each pass URP requires is declared here, you only need to worry about the forwar
 These need to be setup and maintained to match Unity’s shading pipeline. While its quite messy the great thing is we can now pick and choose what lighting we want, and alter it as much as we want. For example since for my water shader I could use the PBR Cook-Torrence model to get more realistic water lighting. Similarly with my foliage shader I use the SimpleLit Blinn-Phong model but add my own translucent lighting version which looks much more realistic.
 
 ```
-      // Fragment Shader
-			half4 LitPassFragment(Varyings IN) : SV_Target {
-				//UNITY_SETUP_INSTANCE_ID(IN);
-    			//UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(IN);
+// Fragment Shader
+half4 LitPassFragment(Varyings IN) : SV_Target {
+	//UNITY_SETUP_INSTANCE_ID(IN);
+    	//UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(IN);
 
-				// Setup SurfaceData
-				SurfaceData surfaceData;
-				InitalizeSurfaceData(IN, surfaceData);
+	// Setup SurfaceData
+	SurfaceData surfaceData;
+	InitalizeSurfaceData(IN, surfaceData);
 
-				// Setup InputData
-				InputData inputData;
-				InitializeInputData(IN, surfaceData.normalTS, inputData);
+	// Setup InputData
+	InputData inputData;
+	InitializeInputData(IN, surfaceData.normalTS, inputData);
 
-				// Key the colors and tint _KeyTex
-				// Albedo comes from a texture tinted by color
-				half3 c = surfaceData.albedo.rgb * _BaseColor.rgb;
-				half4 key = SAMPLE_TEXTURE2D(_KeyTex, sampler_KeyTex, IN.uv.xy);
-				half4 key2 = key;
-				key = key.r * _KeyColor1;
-				key2 = key2.b * _KeyColor2;
-				key += key2;
+	// Key the colors and tint _KeyTex
+	// Albedo comes from a texture tinted by color
+	half3 c = surfaceData.albedo.rgb * _BaseColor.rgb;
+	half4 key = SAMPLE_TEXTURE2D(_KeyTex, sampler_KeyTex, IN.uv.xy);
+	half4 key2 = key;
+	key = key.r * _KeyColor1;
+	key2 = key2.b * _KeyColor2;
+	key += key2;
 
-				c = c * key.rgb;
-				surfaceData.albedo = c.rgb;
-				surfaceData.emission.rgb = _EmissionAmount * key.rgb;
+	c = c * key.rgb;
+	surfaceData.albedo = c.rgb;
+	surfaceData.emission.rgb = _EmissionAmount * key.rgb;
 
-				// Simple Lighting (Lambert & BlinnPhong)
-				half4 color = UniversalFragmentBlinnPhong(inputData, surfaceData);
+	// Simple Lighting (Lambert & BlinnPhong)
+	half4 color = UniversalFragmentBlinnPhong(inputData, surfaceData);
 
-				color.rgb = MixFog(color.rgb, inputData.fogCoord);
-				//color.a = OutputAlpha(color.a, _Surface);
-				return color;
-			}
+	color.rgb = MixFog(color.rgb, inputData.fogCoord);
+	//color.a = OutputAlpha(color.a, _Surface);
+	return color;
+}
 ```
 
 While this workflow is isn’t perfect and a bit messy to maintain, it does give me great control over URP shaders, meaning I can easily add features such as tessellation which is currently not possible with shader graph.
