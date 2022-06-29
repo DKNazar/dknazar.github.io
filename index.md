@@ -10,8 +10,9 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 
 <h2 align="center"> Portfolio </h2>
 <hr>
-Note: I am currently transitioning to github from my <a href="https://dknazar.wordpress.com/portfolio/" target="_blank">old wordpress site</a>, some items will still link to the old website!
+Note: I am currently transitioning to github from my <a href="https://dknazar.wordpress.com/portfolio/" target="_blank">old wordpress site</a>, some items will still link to the old website.
 <hr><br>
+Click the images to see more!
 <div>
   
   <h3>PBR Procedural Sky</h3>
