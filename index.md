@@ -1,3 +1,4 @@
+<meta name="theme-color" content="#24688E">
 <h1 align="center"> DKNazar Game Dev </h1>
 
 <div align="center">
