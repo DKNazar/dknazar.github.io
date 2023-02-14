@@ -132,3 +132,6 @@ This is very implementation specific, but the original Guerrilla Games optimisat
 One key difference is Guerilla Games is a Sony studio meaning they built for PS4 which is faster than an Xbox One. On Xbox the noise texture sampling was hitting bandwidth limits hard, the biggest performance increase was to lower the 3D volume textures bits from R32F to R16 and even R8 if needed. It had very little visual impact and made Xbox One very playable with the sky.
 <br>
 <br>
+<br>
+<br>
+<br>
