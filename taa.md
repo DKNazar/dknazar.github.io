@@ -32,9 +32,9 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 </a>
 
   <ul>
-    <li>[Temporal Reprojection Anti-Aliasing in Inside](https://www.youtube.com/watch?v=2XXS5UyNjjU): this a great overview and implementation, but a bit stylized since the game had a very unique aesthetic.</li>
-  <li>[Unreal Engine 4's TAA presentation](https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf): more focused on refining TAA for higher quality results through better HDR management and neighbourhood clipping.</li>
-  <li> [Nvidia TAA Overview](https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf): nice overview, with a GREAT look at varience clipping!</li>
+    <li><a href="https://www.youtube.com/watch?v=2XXS5UyNjjU" target="_blank">Temporal Reprojection Anti-Aliasing in Inside</a>: this a great overview and implementation, but a bit stylized since the game had a very unique aesthetic.</li>
+  <li><a href="https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf" target="_blank">Unreal Engine 4's TAA presentation</a>: more focused on refining TAA for higher quality results through better HDR management and neighbourhood clipping.</li>
+  <li><a href="https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf" target="_blank">Nvidia TAA Overview</a>: nice overview, with a GREAT look at varience clipping!</li>
   </ul>
 
 
