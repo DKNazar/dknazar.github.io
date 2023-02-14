@@ -19,7 +19,7 @@ Click the images to see more!
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
-  <a href="procedural-sky"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  <a href="procedural-sky"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
   <h3> Notes on Temporal Anti-aliasing</h3>
@@ -27,7 +27,7 @@ Click the images to see more!
   <li><em>One of my first tasks as a graphics programmer, make TAA better, but first learn what TAA means</em></li>
   </ul>
   
-  <a href="taa"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  <a href="taa"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
   <h3> Accidentally Developing a Level Design Tool</h3>
