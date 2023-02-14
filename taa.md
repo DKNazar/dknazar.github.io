@@ -31,6 +31,8 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
   <li>Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.</li>
 </a>
 
+<h3 align="center">Research Links</h3><hr>
+
 <ul>
   <li><a href="https://www.youtube.com/watch?v=2XXS5UyNjjU" target="_blank">Temporal Reprojection Anti-Aliasing in Inside</a>: this a great overview and implementation, but a bit stylized since the game had a very unique aesthetic.</li>
   <li><a href="https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf" target="_blank">Unreal Engine 4's TAA presentation</a>: more focused on refining TAA for higher quality results through better HDR management and neighbourhood clipping.</li>
