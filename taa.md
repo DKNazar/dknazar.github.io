@@ -19,23 +19,23 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 <h3 align="center">Glossary</h3><hr>
 
 <a align="center">
-  <ul> Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.</ul>
-  <ul>History (frame) - a texture containing the previous frame's TAA output. A smooth image we sample to compare against our current frame.</ul>
-  <ul>Reprojection - calculating where the current pixel was in the previous frame (history).</ul>
-  <ul>Subpixel - the place between the discrete pixels on of the screen.</ul>
-  <ul>Jitter - moving the camera's translation, usually by a subpixel amount.</ul>
-  <ul>Ghosting - when TAA blends too much during camera movement, causing big smears across the screen.</ul>
-  <ul>Neighbourhood - the surround pixels of the current pixel we are rendering (usually the current frame).</ul>
-  <ul>Neighbourhood Clamping - clamping the history colour into the colour bounds (min/max) of the current neighbourhood. Reduces ghosting.</ul>
-  <ul>Neighbourhood Clipping - instead of just clamping to the bounds, drag the the history colour towards the current colour until it is within the bounding box. Reduce ghosting further.</ul>
-  <ul>Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.</ul>
+  <li> Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.</li>
+  <li>History (frame) - a texture containing the previous frame's TAA output. A smooth image we sample to compare against our current frame.</li>
+  <li>Reprojection - calculating where the current pixel was in the previous frame (history).</li>
+  <li>Subpixel - the place between the discrete pixels on of the screen.</li>
+  <li>Jitter - moving the camera's translation, usually by a subpixel amount.</li>
+  <li>Ghosting - when TAA blends too much during camera movement, causing big smears across the screen.</li>
+  <li>Neighbourhood - the surround pixels of the current pixel we are rendering (usually the current frame).</li>
+  <li>Neighbourhood Clamping - clamping the history colour into the colour bounds (min/max) of the current neighbourhood. Reduces ghosting.</li>
+  <li>Neighbourhood Clipping - instead of just clamping to the bounds, drag the the history colour towards the current colour until it is within the bounding box. Reduce ghosting further.</li>
+  <li>Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.</li>
 </a>
 
-  <ul>
-    <li><a href="https://www.youtube.com/watch?v=2XXS5UyNjjU" target="_blank">Temporal Reprojection Anti-Aliasing in Inside</a>: this a great overview and implementation, but a bit stylized since the game had a very unique aesthetic.</li>
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=2XXS5UyNjjU" target="_blank">Temporal Reprojection Anti-Aliasing in Inside</a>: this a great overview and implementation, but a bit stylized since the game had a very unique aesthetic.</li>
   <li><a href="https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf" target="_blank">Unreal Engine 4's TAA presentation</a>: more focused on refining TAA for higher quality results through better HDR management and neighbourhood clipping.</li>
   <li><a href="https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf" target="_blank">Nvidia TAA Overview</a>: nice overview, with a GREAT look at varience clipping!</li>
-  </ul>
+</ul>
 
 
 <h2 align="center">To be continued</h2><hr>
