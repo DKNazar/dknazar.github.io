@@ -17,16 +17,16 @@ TAA is essentially jiggling the camera every frame, then blurring/blending them 
 Just want the answers? Every link I think is useful and a quick glossary. In retrospect it is easy to find this info, but at the time without a working lexicon it is difficult.
 
 <a align="center">
-  Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.
-  History (frame) - a texture containing the previous frame's TAA output. A smooth image we sample to compare against our current frame
-  Reprojection - calculating where the current pixel was in the previous frame (history).
-  Subpixel - the place between the discrete pixels on of the screen.
-  Jitter - moving the camera's translation, usually by a subpixel amount.
-  Ghosting - when TAA blends too much during camera movement, causing big smears across the screen.
-  Neighbourhood - the surround pixels of the current pixel we are rendering (usually the current frame).
-  Neighbourhood Clamping - clamping the history colour into the colour bounds (min/max) of the current neighbourhood. Reduces ghosting.
-  Neighbourhood Clipping - instead of just clamping to the bounds, drag the the history colour towards the current colour until it is within the bounding box. Reduce ghosting further.
-  Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.
+  <ul> Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.</ul>
+  <ul>History (frame) - a texture containing the previous frame's TAA output. A smooth image we sample to compare against our current frame.</ul>
+  <ul>Reprojection - calculating where the current pixel was in the previous frame (history).</ul>
+  <ul>Subpixel - the place between the discrete pixels on of the screen.</ul>
+  <ul>Jitter - moving the camera's translation, usually by a subpixel amount.</ul>
+  <ul>Ghosting - when TAA blends too much during camera movement, causing big smears across the screen.</ul>
+  <ul>Neighbourhood - the surround pixels of the current pixel we are rendering (usually the current frame).</ul>
+  <ul>Neighbourhood Clamping - clamping the history colour into the colour bounds (min/max) of the current neighbourhood. Reduces ghosting.</ul>
+  <ul>Neighbourhood Clipping - instead of just clamping to the bounds, drag the the history colour towards the current colour until it is within the bounding box. Reduce ghosting further.</ul>
+  Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.</ul>
 </a>
 
   <ul>
