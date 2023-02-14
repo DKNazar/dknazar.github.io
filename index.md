@@ -22,6 +22,14 @@ Click the images to see more!
   <a href="procedural-sky"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
+  <h3> Notes on Temporal Anti-aliasing</h3>
+  <ul>
+  <li><em>One of my first tasks as a graphics programmer, make TAA better, but first learn what TAA means</em></li>
+  </ul>
+  
+  <a href="taa"><img width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  <hr><br>
+  
   <h3> Accidentally Developing a Level Design Tool</h3>
   <ul>
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
