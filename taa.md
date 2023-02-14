@@ -1,6 +1,6 @@
 ---
 title: "Notes on TAA"
-permalink: /TAA/
+permalink: /taa/
 ---
 <h1 align="center">Temporal Anti-aliasing</h1>
 
