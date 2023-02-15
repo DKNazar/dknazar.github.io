@@ -13,6 +13,8 @@ One of my first tasks as a graphics programmer was to improve their TAA implemen
 
 TAA is essentially jiggling the camera every frame, then blurring/blending them together to produce a smooth looking image. Aliased pixels are where geometry (and other) detail is unable to be represented on the low resolution screen. It lands between pixels (subpixel) and cannot be perfectly represented, causing jagged edges. By jiggling (or jittering) the camera a tiny subpixel amount these jagged edges will snap back and forth between different pixel locations. The results of each frame  By blending these subpixel movements every frame the image will blur these edges over time, resulting in a smooth image.
 
+The main strength of TAA over other screen space anti-aliasing techniques is that it is temporally stable, during camera motion the image should still be smooth and free of aliasing. Unlike FXAA or SMAA (although there are SMAA+TAA techniques).
+
 <h2 align="center">Cheat Sheet</h2><hr>
 
 Just want the answers? Every link I think is useful and a quick glossary. In retrospect it is easy to find this info, but at the time without a working lexicon it is difficult.
@@ -85,7 +87,7 @@ So I recommend reading/watching the links above in that order but the key steps 
 <br><br>
 <h2 align="center">My Notes on TAA</h2><hr>
 
-In the end the TAA I had to fix up had many issues, and unpacking them we almost impossible. In the end I did almost a full rewrite and backtracked from there to figure out what went wrong in our previous TAA. Turns out in an effort to reduce ghosting we increased the blend factor of 10% to much larger amounts when velocity increased (camera or object motion). This maybe sounds good at first glance since taking more of the current frame will reduce ghosting and result in sharper images. But we lose the main strength of TAA that it is temporally stable, most other screen-space anti-aliasing break during camera motion, not TAA. This was effecively throwing out most of our work as soon as the camera moved. There were a number of other small issues like tonemapping incorrectly and oddities with jitter calculations, but that was the most egregious.
+In the end the TAA I had to fix up had many issues, and unpacking them was almost impossible. In the end I did almost a full rewrite and backtracked from there to figure out what went wrong in our previous TAA. Turns out in an effort to reduce ghosting we increased the blend factor of 10% to much larger amounts when velocity increased (camera or object motion). This maybe sounds good at first glance since taking more of the current frame will reduce ghosting and result in sharper images. But we lose the main strength of TAA that it is temporally stable, most other screen-space anti-aliasing break during camera motion, not TAA. This was effecively throwing out most of our work as soon as the camera moved. There were a number of other small issues like tonemapping incorrectly and oddities with jitter calculations, but that was the most egregious.
 
 <br>
 <br>
