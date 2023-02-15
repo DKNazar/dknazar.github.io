@@ -50,23 +50,23 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 
 So I recommend reading/watching the links above in that order but the key steps are: <br><br>
 <ul>
-    Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
+    - Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
     <br><br>
-    On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
+    - On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
     <br><br>
-    Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
+    - Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
     <br><br>
-    Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
+    - Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
     <br><br>
-    The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
+    - The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
     <br><br>
-    So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
+    - So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
     <br><br>
-    This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
+    - This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
     <br><br>
-    We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
+    - We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
     <br><br>
-    So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
+    - So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
     <br><br>
 </ul>
 <br>
@@ -74,13 +74,13 @@ So I recommend reading/watching the links above in that order but the key steps 
     <br>
     <h3 align="center">Increasing Quality</h3><hr>
     
-   TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
+   - TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
     
-    Flickering is caused by many different things, and decreasing ghosting often causes more flickering which is why this is somewhat application specific (how important is having no ghosting is vs flickering).
+   - Flickering is caused by many different things, and decreasing ghosting often causes more flickering which is why this is somewhat application specific (how important is having no ghosting is vs flickering).
     
-    1. When you have tiny geometry on screen like a wire fence if you jitter the camera that geometry no longer exists in the next frame, but when we jitter it for the frame after that it will exist again and pop back in causing flickering. A method briefly mentioned in UE4's talk is by recording these impulses in another buffer (or alpha channel) and effectively decreasing that pixel's importance. I achieved this by increasing the acceptable colour bounds in varience clipping, it would allow more ghosting in these flickering spots causing them to blend nicely.
+   1. When you have tiny geometry on screen like a wire fence if you jitter the camera that geometry no longer exists in the next frame, but when we jitter it for the frame after that it will exist again and pop back in causing flickering. A method briefly mentioned in UE4's talk is by recording these impulses in another buffer (or alpha channel) and effectively decreasing that pixel's importance. I achieved this by increasing the acceptable colour bounds in varience clipping, it would allow more ghosting in these flickering spots causing them to blend nicely.
     
-    2. Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
+   2. Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
     
 <br><br>
 <h2 align="center">My Notes on TAA</h2><hr>
