@@ -40,7 +40,7 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
   <li><a href="https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf" target="_blank">Unreal Engine 4's TAA presentation</a>: more focused on refining TAA for higher quality results through better HDR management and neighbourhood clipping.</li>
   <li><a href="https://developer.download.nvidia.com/gameworks/events/GDC2016/msalvi_temporal_supersampling.pdf" target="_blank">Nvidia TAA Overview</a>: nice overview, with a GREAT look at varience clipping!</li>
   <li><a href="https://alextardif.com/TAA.html" target="_blank">Alex Tardif's TAA Starter Pack </a>: after understanding the basics this really ties it all together into a very simple and clean implementation.</li>
-  <li><a href="https://www.elopezr.com/temporal-aa-and-the-quest-for-the-holy-trail/"> TAA and the Holy Trail</a>: a detailed and comprehensive guide to TAA with a good amount of implementation provided.
+  <li><a href="https://www.elopezr.com/temporal-aa-and-the-quest-for-the-holy-trail/"> TAA and the Holy Trail</a>: a detailed and comprehensive guide to TAA with a good amount of implementation provided.</li>
 </ul>
 
 
@@ -48,29 +48,30 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 
  <h3 align="center">Core Steps</h3><hr>
 
-So I recommend reading/watching the links above in that order but the key steps are: <br>
+So I recommend reading/watching the links above in that order but the key steps are: <br><br>
 <ul>
     Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
-    <br>
+    <br><br>
     On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
-    <br>
+    <br><br>
     Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
-    <br>
+    <br><br>
     Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
-    <br>
+    <br><br>
     The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
-    <br>
+    <br><br>
     So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
-    <br>
+    <br><br>
     This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
-    <br>
+    <br><br>
     We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
-    <br>
+    <br><br>
     So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
-    <br>
+    <br><br>
 </ul>
+<br>
     That is what I consider the core of TAA, the rest is somewhat more application specific.
-    
+    <br>
     <h3 align="center">Increasing Quality</h3><hr>
     
     -TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
