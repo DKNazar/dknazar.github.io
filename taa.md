@@ -20,7 +20,7 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 <h3 align="center">Glossary</h3>
 
   <ul>
-    <li> Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.</li><br>
+    <li>Current (frame) - the newly rendered aliased image, probably the output of our geometry/lighting passes.</li><br>
     <li>History (frame) - a texture containing the previous frame's TAA output. A smooth image we sample to compare against our current frame.</li><br>
     <li>Reprojection - calculating where the current pixel was in the previous frame (history).</li><br>
     <li>Subpixel - the place between the discrete pixels on of the screen.</li><br>
@@ -50,23 +50,23 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 
 So I recommend reading/watching the links above in that order but the key steps are: <br><br>
 <ul>
-    - Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
+      - Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
     <br><br>
-    - On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
+      - On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
     <br><br>
-    - Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
+      - Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
     <br><br>
-    - Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
+      - Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
     <br><br>
-    - The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
+      - The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
     <br><br>
-    - So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
+      - So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
     <br><br>
-    - This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
+      - This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
     <br><br>
-    - We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
+      - We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
     <br><br>
-    - So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
+      - So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
     <br><br>
 </ul>
 <br>
