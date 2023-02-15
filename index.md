@@ -27,7 +27,7 @@ Click the images to see more!
   <li><em>One of my first tasks as a graphics programmer, make TAA better, but first learn what TAA means</em></li>
   </ul>
   
-  <a href="taa"><img align="center" width="600" src="/images/edgerunners_ghosting.png" alt="TAA ghosting"></a>
+  <a href="taa"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
   <hr><br>
   
   <h3> Accidentally Developing a Level Design Tool</h3>
