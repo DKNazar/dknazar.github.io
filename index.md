@@ -18,8 +18,8 @@ Click the images to see more!
   <h3>PBR Procedural Sky</h3>
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
-  </ul>
   <a href="procedural-sky"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  </ul>
   <hr><br>
   
   <h3> Notes on Temporal Anti-aliasing</h3>
