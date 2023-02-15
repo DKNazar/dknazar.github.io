@@ -6,4 +6,8 @@ permalink: /hdr/
 
 <h2 align="center">Preamble</h2>
 
-High Dynamic Range (HDR) sounds very cool but what is it? After large amount of research I barely know, but it seems to work in the game for now. It is basically the wild west in HDR, we have some standards but often you can't rely on them, the screens do absurd things to emulate HDR for marketing, and all our assets are SDR.
+High Dynamic Range (HDR) sounds very cool but what is it? After large amount of research I barely know, but it seems to work in the game for now. It is basically the wild west in HDR, we have some standards but often you can't rely on them, the screens do absurd things to emulate HDR for marketing, and all our assets/artists are in SDR.
+
+<h2 align="center">Quickly Explain</h2>
+
+Should white paint and the sun reach the same brightness? probably not and with the power of HDR you can represent both somewhat more appropriately. Usually in games we render lighting in HDR (greater than 8 bits per channel) where we can represent colour values greater than 1.0. But when outputting to a monitor we must crunch this data back down to meet the requirements of the monitor which can only represent to 1.0. To bring the range back to 1.0 we tonemap the image which applies a curve that looks visually pleasing/natural to our eyes. This curve is mostly important near 0 or 1 (the shadows and highlights), so while the sun was 100.0 and white paint was 1.0, the tonemapper will flatten thse values with the sun being something like 0.99 and white paint 0.9.
