@@ -48,7 +48,7 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 
 <h2 align="center">TAA Overview</h2><hr>
 
-<h3 align="center">Core Steps</h3><hr>
+<h3 align="center">Core Steps</h3>
 
 So I recommend reading/watching the links above in that order but the key steps are: <br><br>
 <ul>
@@ -72,9 +72,10 @@ So I recommend reading/watching the links above in that order but the key steps 
     <br><br>
 </ul>
 <br>
-    That is what I consider the core of TAA, the rest is somewhat more application specific.
-    <br>
-    <h3 align="center">Increasing Quality</h3><hr>
+That is what I consider the core of TAA, the rest is somewhat more application specific.
+<br>
+    
+<h3 align="center">Increasing Quality</h3><hr>
     
    - TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
     
