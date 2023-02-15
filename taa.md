@@ -86,7 +86,7 @@ When you have tiny geometry on screen like a wire fence if you jitter the camera
 Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
     
 <br><br>
-<h2 align="center">My Notes on TAA</h2><hr>
+<h2 align="center">End Notes</h2><hr>
 
 In the end the TAA I had to fix up had many issues, and unpacking them was almost impossible. In the end I did almost a full rewrite and backtracked from there to figure out what went wrong in our previous TAA. Turns out in an effort to reduce ghosting we increased the blend factor of 10% to much larger amounts when velocity increased (camera or object motion). This maybe sounds good at first glance since taking more of the current frame will reduce ghosting and result in sharper images. But we lose the main strength of TAA that it is temporally stable, most other screen-space anti-aliasing break during camera motion, not TAA. This was effecively throwing out most of our work as soon as the camera moved. There were a number of other small issues like tonemapping incorrectly and oddities with jitter calculations, but that was the most egregious.
 
