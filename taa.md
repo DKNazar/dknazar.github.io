@@ -49,16 +49,26 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
  <h3 align="center">Core Steps</h3><hr>
 
 So I recommend reading/watching the links above in that order but the key steps are: <br>
-    - Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)<br>
-    - On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.<br>
-    - Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.<br>
-    - Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).<br>
-    - The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.<br>
-    - So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.<br>
-    - This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.<br>
-    - We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.<br>
-    - So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.<br>
-    
+<ul>
+    Store the previous frame's TAA output in a history texture (at frame 0 it will just be a copy of the current frame)
+    <br>
+    On the next frame move the camera by a subpixel amount so rendered geometry will shift slightly.
+    <br>
+    Sample the history texture by calculating where the current frame pixel would be in history using the previous view projection matrix.
+    <br>
+    Blend the current frame with the history frame by some factor like 10% just a lerp(historyColour, currentColour, 0.1).
+    <br>
+    The still image should look smooth but moving the camera will cause ghosting/blurriness due to slow blending and disocclusions.
+    <br>
+    So before blending we must first use Varience Neighbourhood Clipping to bring history to a similar colour to our current frame colour.
+    <br>
+    This will massively reduce ghosting on camera movement but on individual object movements we need to be able to track their old pixel location. Before we did this with just camera data, but now we need the motion vector of the object itself.
+    <br>
+    We do this by rendering any moving object to a velocity buffer which is the calculation of the current pixel postion vs the previous.
+    <br>
+    So when reprojecting the current pixel we also check the velocity buffer which might contain extra movement information for the location of the history pixel.
+    <br>
+</ul>
     That is what I consider the core of TAA, the rest is somewhat more application specific.
     
     <h3 align="center">Increasing Quality</h3><hr>
@@ -71,7 +81,7 @@ So I recommend reading/watching the links above in that order but the key steps 
     
     2. Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
     
- 
+<br><br>
 <h2 align="center">My Notes on TAA</h2><hr>
 
 In the end the TAA I had to fix up had many issues, and unpacking them we almost impossible. In the end I did almost a full rewrite and backtracked from there to figure out what went wrong in our previous TAA. Turns out in an effort to reduce ghosting we increased the blend factor of 10% to much larger amounts when velocity increased (camera or object motion). This maybe sounds good at first glance since taking more of the current frame will reduce ghosting and result in sharper images. But we lose the main strength of TAA that it is temporally stable, most other screen-space anti-aliasing break during camera motion, not TAA. This was effecively throwing out most of our work as soon as the camera moved. There were a number of other small issues like tonemapping incorrectly and oddities with jitter calculations, but that was the most egregious.
