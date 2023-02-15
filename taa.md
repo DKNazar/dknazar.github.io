@@ -46,7 +46,7 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
 
 <h2 align="center">TAA Overview</h2><hr>
 
- <h3 align="center">Core Steps</h3><hr>
+<h3 align="center">Core Steps</h3><hr>
 
 So I recommend reading/watching the links above in that order but the key steps are: <br><br>
 <ul>
@@ -74,7 +74,7 @@ So I recommend reading/watching the links above in that order but the key steps 
     <br>
     <h3 align="center">Increasing Quality</h3><hr>
     
-    -TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
+   TAA in motion can look too blurry, to help this when sampling history using a bicubic Catmull-Rom filter (using 5 samples) can increase the sharpness of the image. <br>
     
     Flickering is caused by many different things, and decreasing ghosting often causes more flickering which is why this is somewhat application specific (how important is having no ghosting is vs flickering).
     
