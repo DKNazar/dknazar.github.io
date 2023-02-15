@@ -23,6 +23,14 @@ Click the images to see more!
   <a href="procedural-sky"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
+  <h3>HDR</h3>
+  <ul>
+  <li><em>Implementing HDR where colours are bright and the points don't matter</em></li>
+  </ul>
+  
+  <a href="hdr"><img align="center" width="600" src="/images/hdr-calibration-exampl.png" alt="hdr calibration screen for cricket"></a>
+  <hr><br>
+  
   <h3> Notes on Temporal Anti-aliasing</h3>
   <ul>
   <li><em>One of my first tasks as a graphics programmer, make TAA better, but first learn what TAA means</em></li>
