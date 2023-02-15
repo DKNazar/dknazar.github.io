@@ -81,9 +81,9 @@ That is what I consider the core of TAA, the rest is somewhat more application s
     
    - Flickering is caused by many different things, and decreasing ghosting often causes more flickering which is why this is somewhat application specific (how important is having no ghosting is vs flickering).
     
-   1. When you have tiny geometry on screen like a wire fence if you jitter the camera that geometry no longer exists in the next frame, but when we jitter it for the frame after that it will exist again and pop back in causing flickering. A method briefly mentioned in UE4's talk is by recording these impulses in another buffer (or alpha channel) and effectively decreasing that pixel's importance. I achieved this by increasing the acceptable colour bounds in varience clipping, it would allow more ghosting in these flickering spots causing them to blend nicely.
+When you have tiny geometry on screen like a wire fence if you jitter the camera that geometry no longer exists in the next frame, but when we jitter it for the frame after that it will exist again and pop back in causing flickering. A method briefly mentioned in UE4's talk is by recording these impulses in another buffer (or alpha channel) and effectively decreasing that pixel's importance. I achieved this by increasing the acceptable colour bounds in varience clipping, it would allow more ghosting in these flickering spots causing them to blend nicely.
     
-   2. Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
+Specular flickering where each frame the specular material causes very bright highlights to jitter across the edges of geometry, similar to the tiny geometry flickering. These can have very high HDR values which is difficult to handle, doing a tonemapping/luminance filtering step to both history and current colour (as seen in Alex Tardif's TAA) can greatly mitigate this, this was the main solution to our own TAA flickering.
     
 <br><br>
 <h2 align="center">My Notes on TAA</h2><hr>
