@@ -28,7 +28,7 @@ Click the images to see more!
   <li><em>Implementing HDR where colours are bright and the points don't matter</em></li>
   </ul>
   
-  <a href="hdr"><img align="center" width="600" src="/images/hdr-calibration-exampl.png" alt="hdr calibration screen for cricket"></a>
+  <a href="hdr"><img align="center" width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket"></a>
   <hr><br>
   
   <h3> Notes on Temporal Anti-aliasing</h3>
