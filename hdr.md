@@ -14,7 +14,7 @@ Should white paint and the sun reach the same brightness? probably not and with 
 
 Previously in SDR land our 0-1 brightness values were relative to the monitor or TV supplied. These screens generally reach max brightnesses of 200-300 nits, so the SDR value of 1.0 simply shows up as 300 nits of brightness on your screen. But with HDR the scale is no longer relative, we can more accurately display the exact nit value we want. If we want the sun to be 10,000 nits we can now ask for that exactly (but no screen can reach that). The HDR scale currently defines a 0-10,000 nits brightness scale from 0-1.
 
-With HDR you can also respresent more colour information using the REC.2020 colour primaries, but currently all our assets were made for REC.709.
+With HDR you also respresent more colour information using the REC.2020 colour primaries, but currently all our assets were made for REC.709.
 
 
 <h3 align="center">Glossary</h3>
@@ -24,12 +24,12 @@ With HDR you can also respresent more colour information using the REC.2020 colo
     <li>Nits - a measurement for brightness that screens use.</li><br>
     <li>Paperwhite nits - the brightness that feels white like a piece of paper, but not white like the sun or a bright light. This can depending on your viewing environment, similar to how gamma works.</li><br>
     <li>Electro-Optical Transfer Function (EOTF) - a function/curve that gets applied to the game colour output so it can be properly represented on screen. In SDR this is our gamma function, and in HDR this is our Perceptual Quantizer function.</li>
-    <li> Perceptual Quantizer - to display HDR to a screen we must apply the SMPTE ST 2084 PQ function which is based on human perception, and outputs to the range of 0-10,000 nits.</li>
+    <li>Perceptual Quantizer - to display HDR to a screen we must apply the SMPTE ST 2084 PQ function which is based on human perception, and outputs to the range of 0-10,000 nits.</li>
   </ul>
 
 <h3 align="center">Research Links</h3>
 
 <ul>
   <li><a href="https://www.youtube.com/watch?v=pWyd835pfeg" target="_blank">High Dynamic Range in DirectX Games</a>: I wish this existed when I was learning about HDR, it sums it up so well.</li>
-  <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
+  <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous Part 1</a> and <a href="https://www.glowybits.com/blog/2017/01/04/ifl_iss_hdr_2/" target"_blank"> Part 2</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
 </ul>
