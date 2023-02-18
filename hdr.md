@@ -33,3 +33,35 @@ With HDR you also respresent more colour information using the REC.2020 colour p
   <li><a href="https://www.youtube.com/watch?v=pWyd835pfeg" target="_blank">High Dynamic Range in DirectX Games</a>: I wish this existed when I was learning about HDR, it sums it up so well.</li>
   <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous Part 1</a> and <a href="https://www.glowybits.com/blog/2017/01/04/ifl_iss_hdr_2/" target"_blank"> Part 2</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
 </ul>
+
+<h2 align="center">Implementation Details</h2>
+
+<h3 align="center">HDR Tonemapping</h3>
+
+By doing our lighting pass using a RG11B10F target means we properly represent HDR values already, so the main changes happen in the tonemapping step. We use the Hejl tonemap and then convert to gamma and output to an RGBA8 texture in the SDR pipeline. A naive assumption is we do not need the tonemapper anymore because we can represent HDR on the screen now...but HDR screens do not represent the full 10,000 nits at all so tonemapping is still needed. In the new HDR pipeline we had to create an extension of the Hejl tonemap to allow for ranges greater than 1.0 as an output. It maps onto the orignal Hejl but with much less falloff at the tail.
+
+Another consideration is that each HDR screen has a different maximum nits, this means the tonemapper needs to adapt for different screens. The adaption factor is calculated as maxNits/10000, this scales the tonemapper to extend or reduce the range of brights.
+
+Finally now that we have the tonemapped colour instead of applying the gamma function we apply the PQ function. This is the EOTF which the HDR screen expects and will interpret through to display the image with the desired brightnesses. It is a non-linear function which maps 0-1 to 0-10,000 nits, it more precise at the lower/darker ranges as this is where more obvious banding would occur.
+
+```hlsl
+float4 ConvertToHDR10(float4 hdrSceneValue, float paperWhiteNits)
+{   
+    float3 rec2020 = mul(from709to2020, hdrSceneValue.rgb);                             // Rotate Rec.709 color primaries into Rec.2020 color primaries
+    float3 normalizedLinearValue = NormalizeHDRSceneValue(rec2020, paperWhiteNits);     // Normalize using paper white nits to prepare for ST.2084     
+    float3 HDR10 = LinearToST2084(normalizedLinearValue);                               // Apply ST.2084 curve
+
+    return float4(HDR10.rgb, hdrSceneValue.a);
+}
+```
+
+<h3 align="center">Blending UI</h3>
+
+Unfortunately HDR PQ and sRGB UI do not alpha blend properly...so we need a common space to blend them in called sRGB10, this is described in Jasmin Patry's blog. In the HDR pipeline we now render the UI into sRGB10 instead of sRGB, and during our tonemapper instead of PQ we convert to sRGB10. Now blending works properly, we can have transparent UI on top, after blending we can run a fullscreen PQ function pass to get our HDR output.
+
+<h3 align="center">HDR Calibration</h3>
+
+
+
+
+
