@@ -56,74 +56,74 @@ for (u32 i = 0; i < 4; i++)
 After calculating the centre point we use this as the piviot for our patch of grass positions generated in the compute shader. We use a grass_mesh_density value as our grid density for distances between each grass quad. Using our current grass index (threadId) to calculate the local translation from the centre point. These positions are snapped to the world grid and later used as a seed for the grass quad properties.
 
 ```hlsl
-    float gridDist = g_grass_mesh_density;
-    float2 vec = (float2(int2(threadId.xy) * 2 - grassCountSqrt) + 0.5.xx) * gridDist.xx * 0.5;
-    float2 centre = grassCentre.xy + gridDist.xx * 0.5;
-    float2 p = centre + vec; // world point
-    
-    instanceData.position = p;
-    float2 dir = normalize((rand2dTo2d(p) * 2 - 1));
-    instanceData.facing = dir;
-
-    float nearPlaneDistance = dot(instanceData.position.xy - nearPlanePos.xy, cameraForward.xy);
-
-    // reduce height at distance from near plane, and when grass projection is distant
-    float heightScale = (1.0 - saturate(nearPlaneDistance / g_grass_distance_falloff)) * smoothstep(0.0, 0.2, planeVisibility);
-    heightScale = smoothstep(0.8, 1.0, heightScale);
-    float rngH = g_grass_height + rand2dTo1d(p, 0.68) * g_grass_height_noise;
-    
-    instanceData.height = rngH * heightScale;
-    instanceData.width = g_grass_mesh_width + g_grass_mesh_width_noise * rand2dTo1d(p);
-
-    // structured buffer
-    GrassInstanceBuffer[idx] = instanceData;
+   float gridDist = g_grass_mesh_density;
+   float2 vec = (float2(int2(threadId.xy) * 2 - grassCountSqrt) + 0.5.xx) * gridDist.xx * 0.5;
+   float2 centre = grassCentre.xy + gridDist.xx * 0.5;
+   float2 p = centre + vec; // world point
+   
+   instanceData.position = p;
+   float2 dir = normalize((rand2dTo2d(p) * 2 - 1));
+   instanceData.facing = dir;
+   float nearPlaneDistance = dot(instanceData.position.xy - nearPlanePos.xy, cameraForward.xy);
+   // reduce height at distance from near plane, and when grass projection is distant
+   float heightScale = (1.0 - saturate(nearPlaneDistance / g_grass_distance_falloff)) * smoothstep(0.0, 0.2, planeVisibility);
+   heightScale = smoothstep(0.8, 1.0, heightScale);
+   float rngH = g_grass_height + rand2dTo1d(p, 0.68) * g_grass_height_noise;
+   
+   instanceData.height = rngH * heightScale;
+   instanceData.width = g_grass_mesh_width + g_grass_mesh_width_noise * rand2dTo1d(p);
+   // structured buffer
+   GrassInstanceBuffer[idx] = instanceData;
 ```
 
 
 Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next step is to call our instance draw, using the grass buffer with the InstanceID to retrieve the appropriate instance data in our vertex shader. 
 
 ```hlsl
-    GrassInstanceData data = GrassInstanceBuffer[instanceId];
-    float4 position = float4(localpos.xyz, 1);
-    
-    // we shear/flatten our grass dependant on the relative camera height to give grass more volume at high angles
-    float3 toCamera = cameraPosition.xyz - float3(data.position.x, 0.0f, data.position.y);
-    float cameraDistance = max(length(toCamera), 0.001);
-    toCamera /= cameraDistance;
-    
-    float3 up = float3(0, 1, 0);
-    float2 facing = data.facing;
-    float yFactor = saturate((dot(up, toCamera)) * g_grass_heightShear);
-    
-    position.z -= yFactor * localpos.y;
-    position.xy *= float2(data.width, data.height);
-
-    position.xz = rotate(position.xz, float2(facing.y, -facing.x));
-    position.xz += data.position.xy;
+   GrassInstanceData data = GrassInstanceBuffer[instanceId];
+   float4 position = float4(localpos.xyz, 1);
+   
+   // we shear/flatten our grass dependant on the relative camera height to give grass more volume at high angles
+   float3 toCamera = cameraPosition.xyz - float3(data.position.x, 0.0f, data.position.y);
+   float cameraDistance = max(length(toCamera), 0.001);
+   toCamera /= cameraDistance;
+   
+   float3 up = float3(0, 1, 0);
+   float2 facing = data.facing;
+   float yFactor = saturate((dot(up, toCamera)) * g_grass_heightShear);
+   
+   position.z -= yFactor * localpos.y;
+   position.xy *= float2(data.width, data.height);
+   
+   position.xz = rotate(position.xz, float2(facing.y, -facing.x));
+   position.xz += data.position.xy;
 ```
 
 Now using the instance data to get our vertex positions, we need a depth prepass to avoid overdraw, the cost of depth overdraw is much much less than the lit pass overdraw. After that we render the lit grass which involves a lot of small tricks to blend the colour with the ground while also having its own detail. In the pixel shader we blend between the grass texture and the field texture based on distance from the camera near intersection (bottom corners). We also blend the material and normals based on a factor driven by camera height angle. This means when the camera is low and close to the grass we use the grass material maps but when the camera is higher we use the default ground values.
 
 ```hlsl
-        float nearPosDistance = dot(position.xz - nearPlanePos.xy, position.xz - nearPlanePos.xy);
-        float falloff = saturate((nearPosDistance / g_grass_mat_falloff) + (1.0 - planeVisibility));
-        // ground grass colour
-        float3 fieldGrassColor = field_grass.Sample(field_grass_s, grassdiffuseUV).rgb;
-        float4 grassPlaneColour = grass_col.Sample(grass_col_s, uv);
-        fieldGrassColor = lerp(grassPlaneColour.rgb, fieldGrassColor, falloff);
-
-        float cameraHeightBlend = saturate(dot(toCamera, float3(0, 1, 0)) * g_grass_mat_heightBlendBias + falloff * 0.5);
-        N = lerp(nrm_sample.xyz, N, cameraHeightBlend);
-
-        float4 matSample = grass_mat.Sample(ClampedLinear, uv);
-    
-        // match field only when far or high angle
-        material.metalness = lerp(matSample.r, material.metalness, cameraHeightBlend);
-        material.roughness = lerp(matSample.g, material.roughness, cameraHeightBlend);
-        material.cavity = lerp(matSample.b, material.cavity, cameraHeightBlend);
+   float nearPosDistance = dot(position.xz - nearPlanePos.xy, position.xz - nearPlanePos.xy);
+   float falloff = saturate((nearPosDistance / g_grass_mat_falloff) + (1.0 - planeVisibility));
+   
+   // ground grass colour
+   float3 fieldGrassColor = field_grass.Sample(field_grass_s, grassdiffuseUV).rgb;
+   float4 grassPlaneColour = grass_col.Sample(grass_col_s, uv);
+   fieldGrassColor = lerp(grassPlaneColour.rgb, fieldGrassColor, falloff);
+   
+   float cameraHeightBlend = saturate(dot(toCamera, float3(0, 1, 0)) * g_grass_mat_heightBlendBias + falloff * 0.5);
+   N = lerp(nrm_sample.xyz, N, cameraHeightBlend);
+   float4 matSample = grass_mat.Sample(ClampedLinear, uv);
+   
+   // match field only when far or high angle
+   material.metalness = lerp(matSample.r, material.metalness, cameraHeightBlend);
+   material.roughness = lerp(matSample.g, material.roughness, cameraHeightBlend);
+   material.cavity = lerp(matSample.b, material.cavity, cameraHeightBlend);
         
 ```
 
 <br><br>
 <h2 align="center">End Notes</h2><hr>
 
+The grass is far from perfect, it has decent coverage and performance is ok but the field shader is way too expensive which the grass needs to match. While I used a simplified version of the shader it still has much too many texture samples. Compared to the old grass system it is a massive improvement and much more adaptable, being generated based on parameters instead of a static mesh like before.
+
+<br><br>
