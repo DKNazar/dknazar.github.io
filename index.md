@@ -39,6 +39,14 @@ Click the images to see more!
   <a href="taa"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
   <hr><br>
   
+  <h3>Rendering Fine Sports Grass</h3>
+  <ul>
+  <li><em>Rendering grass for sports games, way less fun than adventure exploration games like BOTW or Ghost of Tsushima</em></li>
+  </ul>
+  
+  <a href="fine-grass"><img align="center" width="600" src="/images/sitting0.png" alt="fine-grass"></a>
+  <hr><br>
+  
   <h3> Accidentally Developing a Level Design Tool</h3>
   <ul>
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
