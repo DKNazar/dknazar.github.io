@@ -33,6 +33,7 @@ Just want the answers? Every link I think is useful and a quick glossary. In ret
     <li>Neighbourhood Clamping - clamping the history colour into the colour bounds (min/max) of the current neighbourhood. Reduces ghosting.</li><br>
     <li>Neighbourhood Clipping - instead of just clamping to the bounds, drag the the history colour towards the current colour until it is within the bounding box. Reduce ghosting further.</li><br>
     <li>Varience Clipping - build a more precise colour bounds to clip by using the mean and the variance of the current neighbourhood. Reduces ghosting EVEN further.</li><br>
+    <li>Velocity Buffer - a texture which stores the motion vectors or velocity of each pixel eg. the movement of the pixel compared to the last frame.</li><br>
   </ul>
 
 <h3 align="center">Research Links</h3>
