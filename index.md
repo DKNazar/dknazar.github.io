@@ -39,6 +39,14 @@ Click the images to see more!
   <a href="taa"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
   <hr><br>
   
+  <h3>Computing Auto-Exposure</h3>
+  <ul>
+  <li><em>Using an optimised compute shader to calculate the average screen luminance to emulate eye/camera adaption.</em></li>
+  </ul>
+  
+  <a href="auto-exposure"><img align="center" width="600" src="/images/exposure-compare.png" alt="exposure compare night/day cloudy/day sunny"></a>
+  <hr><br>
+  
   <h3>Rendering Fine Sports Grass</h3>
   <ul>
   <li><em>Rendering grass for sports games, way less fun than adventure exploration games like BOTW or Ghost of Tsushima</em></li>
