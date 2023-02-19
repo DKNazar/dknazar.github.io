@@ -15,7 +15,7 @@ Note: I am currently transitioning to github from my <a href="https://dknazar.wo
 Click the images to see more!
 <div>
   
-  <h3>PBR Procedural Sky</h3>
+  <h3 href="procedural-sky" target="_blank">PBR Procedural Sky</h3>
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
