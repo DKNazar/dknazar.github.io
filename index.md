@@ -33,7 +33,7 @@ Click the images to see more!
   
   <h3> Notes on Temporal Anti-aliasing</h3>
   <ul>
-  <li><em>One of my first tasks as a graphics programmer, make TAA better, but first learn what TAA means</em></li>
+  <li><em>One of my first tasks as a graphics programmer, make TAA better, but first you can learn why this picture is funny.</em></li>
   </ul>
   
   <a href="taa"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
