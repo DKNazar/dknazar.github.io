@@ -13,14 +13,14 @@ Games and graphics programmer, with Bachelor of Arts and Computer Science in gam
 Note: I am currently transitioning to github from my <a href="https://dknazar.wordpress.com/portfolio/" target="_blank">old wordpress site</a>, some items will still link to the old website.
 <hr><br>
 Click the images to see more!
-<div>
+<div align="center">
   
   <h3>PBR Procedural Sky</h3>
   <ul>
   <li><em>For Cricket 22 we needed a next-gen dynamic sky and weather solution</em></li>
   </ul>
   
-  <a href="procedural-sky"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
+  <a href="procedural-sky" target="_blank"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
   <h3>HDR</h3>
@@ -28,7 +28,7 @@ Click the images to see more!
   <li><em>Implementing HDR where colours are bright and the points don't matter</em></li>
   </ul>
   
-  <a href="hdr"><img align="center" width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket"></a>
+  <a href="hdr" target="_blank"><img align="center" width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket"></a>
   <hr><br>
   
   <h3> Notes on Temporal Anti-aliasing</h3>
@@ -36,7 +36,7 @@ Click the images to see more!
   <li><em>One of my first tasks as a graphics programmer, make TAA better, but first you can learn why this picture is funny.</em></li>
   </ul>
   
-  <a href="taa"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
+  <a href="taa" target="_blank"><img align="center" width="600" src="/images/edgerunner_ghosting.png" alt="TAA ghosting"></a>
   <hr><br>
   
   <h3>Computing Auto-Exposure</h3>
@@ -44,7 +44,7 @@ Click the images to see more!
   <li><em>Using an optimised compute shader to calculate the average screen luminance to emulate eye/camera adaption.</em></li>
   </ul>
   
-  <a href="auto-exposure"><img align="center" width="600" src="/images/exposure-compare.png" alt="exposure compare night/day cloudy/day sunny"></a>
+  <a href="auto-exposure" target="_blank"><img align="center" width="600" src="/images/exposure-compare.png" alt="exposure compare night/day cloudy/day sunny"></a>
   <hr><br>
   
   <h3>Rendering Fine Sports Grass</h3>
@@ -52,7 +52,7 @@ Click the images to see more!
   <li><em>Rendering grass for sports games, way less fun than adventure exploration games like BOTW or Ghost of Tsushima</em></li>
   </ul>
   
-  <a href="fine-grass"><img align="center" width="600" src="/images/sitting0.png" alt="fine-grass"></a>
+  <a href="fine-grass" target="_blank"><img align="center" width="600" src="/images/sitting0.png" alt="fine-grass"></a>
   <hr><br>
   
   <h3> Accidentally Developing a Level Design Tool</h3>
@@ -60,7 +60,7 @@ Click the images to see more!
   <li><em>Level design tool which started off as a procedural house builder and later extended to an entire generic level design tool</em></li>
   </ul>
   
-  <a href="level-design-tool-1"><img width="600" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
+  <a href="level-design-tool-1" target="_blank"><img width="600" src="/images/HouseAnimBuild.gif" alt="House building animation"></a>
   <hr><br>
   
   <h3>Post-Processing in URP </h3>
@@ -68,7 +68,7 @@ Click the images to see more!
   <li><em>Adding a custom post processing step in Unity URP</em></li>
   </ul>
 
-  <a href="post-processing-urp"><img width="600" src="/images/fog.png" alt="game image with post-processing"></a>
+  <a href="post-processing-urp" target="_blank"><img width="600" src="/images/fog.png" alt="game image with post-processing"></a>
   <hr><br>
   
   <h3>Moving to URP</h3>
@@ -76,7 +76,7 @@ Click the images to see more!
   <li><em>After many years using the built-in render pipeline, it was time to switch and surprisingly it was not that much of a struggle</em></li>
   </ul>
 
-  <a href="moving-to-urp"><img width="600" src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-06/Gigaya%20Hero%20Shot.jpg" alt="Unity urp hero shot"></a>
+  <a href="moving-to-urp" target="_blank"><img width="600" src="https://unity.com/sites/default/files/styles/810_scale_width/public/2022-06/Gigaya%20Hero%20Shot.jpg" alt="Unity urp hero shot"></a>
   <hr><br>
   
   <h3>Advancing the Water Shader</h3>
@@ -84,14 +84,14 @@ Click the images to see more!
   <li><em>Improving one of my first shaders for Origami Ninja Star, and making it more interactive</em></li>
   </ul>
 
-  <a href="advancing-water-shader"><img width="600" src="/images/WaterEditor.gif" alt="Water editor"></a>
+  <a href="advancing-water-shader" target="_blank"><img width="600" src="/images/WaterEditor.gif" alt="Water editor"></a>
   <hr><br>
   
   <h3>Origami Ninja Star</h3>
   <ul>
   <li><em>Chaotic hybrid of fast paced action and physics-based combat where YOU are the weapon. Currently in development</em></li>
   </ul>
-  <a href="origami-ninja-star">
+  <a href="origami-ninja-star" target="_blank">
   <img width="600" src="/images/capsule_main.png" alt="Origami Ninja Star">
   </a>
   <hr><br>
