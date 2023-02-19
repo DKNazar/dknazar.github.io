@@ -31,6 +31,7 @@ With HDR you also respresent more colour information using the REC.2020 colour p
 <h3 align="center">Research Links</h3>
 
 <ul>
+	<li><a href="https://displayhdr.org/certified-products/" target"_blank"> HDR Vesa Standards</a>: list of HDR standards that should be followed by manufacturers.</li>
   <li><a href="https://www.youtube.com/watch?v=pWyd835pfeg" target="_blank">High Dynamic Range in DirectX Games</a>: I wish this existed when I was learning about HDR, it sums it up so well.</li>
   <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous Part 1</a> and <a href="https://www.glowybits.com/blog/2017/01/04/ifl_iss_hdr_2/" target"_blank"> Part 2</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
 </ul>
@@ -41,7 +42,7 @@ With HDR you also respresent more colour information using the REC.2020 colour p
 
 By doing our lighting pass using a RG11B10F target means we properly represent HDR values already, so the main changes happen in the tonemapping step. We use the Hejl tonemap and then convert to gamma and output to an RGBA8 texture in the SDR pipeline. A naive assumption is we do not need the tonemapper anymore because we can represent HDR on the screen now...but HDR screens do not represent the full 10,000 nits at all so tonemapping is still needed. In the new HDR pipeline we had to create an extension of the Hejl tonemap to allow for ranges greater than 1.0 as an output. It maps onto the orignal Hejl but with much less falloff at the tail.
 
-<iframe src="https://www.desmos.com/calculator/aehn9phert?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<iframe src="https://www.desmos.com/calculator/aehn9phert?embed" align="center" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 Another consideration is that each HDR screen has a different maximum nits, this means the tonemapper needs to adapt for different screens. The adaption factor is calculated as maxNits/10000, this scales the tonemapper to extend or reduce the range of brights. We discuss this more later.
 
@@ -74,7 +75,7 @@ You might've noticed we never discussed where we get paperWhiteNits or maximum n
 
 <h3 align="center">HDR Calibration</h3>
 
-So we now have <a href="https://displayhdr.org/certified-products/">HDR standards</a> the problem is no one cares especially people marketing displays. Not sure what happened but most displays claim HDR10, which just means they are capable of accepting the HDR10 PQ signal and displaying some sort of result. It does not mean it actually reaches any brightness exceeding SDR and most often they just apply a tonemapper onto the 0-10,000 curve and ruin your perfectly curated image. Alternatively it is great when displays follow the standards like HDR400 because they will not apply any weird tonemapper to ruin your image. But HDR400 can only reach 400 nits! So anything you want above that will be clipped.
+So we now have <a href="https://displayhdr.org/certified-products/" target="_blank">HDR standards</a> the problem is no one cares especially people marketing displays. Not sure what happened but most displays claim HDR10, which just means they are capable of accepting the HDR10 PQ signal and displaying some sort of result. It does not mean it actually reaches any brightness exceeding SDR and most often they just apply a tonemapper onto the 0-10,000 curve and ruin your perfectly curated image. Alternatively it is great when displays follow the standards like HDR400 because they will not apply any weird tonemapper to ruin your image. But HDR400 can only reach 400 nits! So anything you want above that will be clipped.
 
 This means we need to know the Maximum Nits to adjust our tonemapper so it displays all brights as best as possible on your screen. This maximum brightness value is usually given to us by console APIs by tools like the PS5 HDR calibration screen available to consumers.
 
