@@ -8,7 +8,9 @@ permalink: /fine-grass/
 
 Most games are about adventure and exploration, with tall grass and dense foliage, not sports games where grass is trimmed and tiny. In wild grass focused games like Breath of the Wild and Ghost of Tsushima, rendering grass can be achieved through rendering each individul grass blade using 3D geometry. This is done through instancing, indirect draws, and clever tricks, but these methods do not scale to the amount of geometry that would be required in fine short grass. So we have to go back to textured quads/billboards/cards which represent many grass blades on one mesh. Less fun.
 
-<img align="center" width="600" src="/images/grass-mat.png" alt="grass wth material">
+<div align="center">
+<img width="600" src="/images/grass-mat.png" alt="grass wth material">
+</div>
 
 <h2 align="center">Fully Explain</h2>
 
@@ -100,8 +102,10 @@ Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next 
    position.xz = rotate(position.xz, float2(facing.y, -facing.x));
    position.xz += data.position.xy;
 ```
-<img align="center" width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
-
+<div align="center">
+<img width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
+</div>
+	
 Now using the instance data to get our vertex positions, we need a depth prepass to avoid overdraw, the cost of depth overdraw is much much less than the lit pass overdraw. After that we render the lit grass which involves a lot of small tricks to blend the colour with the ground while also having its own detail. In the pixel shader we blend between the grass texture and the field texture based on distance from the camera near intersection (bottom corners). We also blend the material and normals based on a factor driven by camera height angle. This means when the camera is low and close to the grass we use the grass material maps but when the camera is higher we use the default ground values.
 
 ```hlsl
@@ -124,7 +128,9 @@ Now using the instance data to get our vertex positions, we need a depth prepass
         
 ```
 
-<img align="center" width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
+<div align="center">
+<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
+</div>
 
 <br><br>
 <h2 align="center">End Notes</h2><hr>
