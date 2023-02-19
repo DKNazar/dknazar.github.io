@@ -34,7 +34,7 @@ With HDR you also respresent more colour information using the REC.2020 colour p
   <li><a href"https://knarkowicz.wordpress.com/2016/08/31/hdr-display-first-steps/" target="_blank"> HDR First Steps</a>: Nice overview to get started.</li>
   <li><a href="https://displayhdr.org/certified-products/" target="_blank"> HDR Vesa Standards</a>: list of HDR standards that should be followed by manufacturers.</li>
   <li><a href="https://www.youtube.com/watch?v=pWyd835pfeg" target="_blank">High Dynamic Range in DirectX Games</a>: I wish this existed when I was learning about HDR, it sums it up so well.</li>
-  <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous Part 1</a> and <a href="https://www.glowybits.com/blog/2017/01/04/ifl_iss_hdr_2/" target"_blank"> Part 2</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
+  <li><a href="https://www.glowybits.com/blog/2016/12/21/ifl_iss_hdr_1/" target="_blank">HDR Display Support in Infamous Part 1</a> and <a href="https://www.glowybits.com/blog/2017/01/04/ifl_iss_hdr_2/" target="_blank"> Part 2</a>: Jasmin Patry on supporting HDR especially with SDR UI elements. Lots of practical info regarding ACES tonemapping, and he made Ghost of Tsushima which means he knows everything.</li>
 </ul>
 
 <h2 align="center">Implementation Details</h2>
