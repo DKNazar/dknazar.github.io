@@ -8,49 +8,51 @@ permalink: /fine-grass/
 
 Most games are about adventure and exploration, with tall grass and dense foliage, not sports games where grass is trimmed and tiny. In wild grass focused games like Breath of the Wild and Ghost of Tsushima, rendering grass can be achieved through rendering each individul grass blade using 3D geometry. This is done through instancing, indirect draws, and clever tricks, but these methods do not scale to the amount of geometry that would be required in fine short grass. So we have to go back to textured quads/billboards/cards which represent many grass blades on one mesh. Less fun.
 
+<img align="center" width="600" src="/images/grass-mat.png" alt="grass wth material">
+
 <h2 align="center">Fully Explain</h2>
 
 First we need to calculate where the grass should be rendered, we don't want to render everywhere and anywhere. On the CPU we calculate the centre point of the grass bounds. This involves a number of plane intersection tests with the camera frustrum planes and the ground (which is always 0 for us). There are a few special considerations, if there is no top corners intersecting or if they are above our maximum distance we need to project them to the maximum. These distances also need to be calculated relative to the bottom corner/near line intersections. Because at small fovs the intersection corners can be extremely far from the camera world position.
 
 ```c++
 for (u32 i = 0; i < 4; i++)
-		{
-			{
-				const Vector3& p = cameraPosition;
-				const Vector3& dir = edgeDirections[i];
-        
+{
+	{
+	const Vector3& p = cameraPosition;
+	const Vector3& dir = edgeDirections[i];
+       
         // if above ground and we got intersection
-				isIntersection[i] = corners[i].getY() < 0.0f && LinePlaneIntersection(intersections[i], planeN, dir, p);
+	isIntersection[i] = corners[i].getY() < 0.0f && LinePlaneIntersection(intersections[i], planeN, dir, p);
         // without intersection just set them to camera far corners on the ground
-				if (!isIntersection[i])
-				{
-					intersections[i] = corners[i];
-					intersections[i].setY(0);
-				}
-			}
+	if (!isIntersection[i])
+	{
+		intersections[i] = corners[i];
+		intersections[i].setY(0);
+	}
+	}
 
-      // should unroll loop since we do these conditional operations
-			if (i == TopRight)
-			{
-        // find centre point at near intersection line
-				nearIntesectCentre = lerp(0.5f, intersections[BotLeft], intersections[BotRight]);
-			}
+      	// should unroll loop since we do these conditional operations
+	if (i == TopRight)
+	{
+        	// find centre point at near intersection line
+		nearIntesectCentre = lerp(0.5f, intersections[BotLeft], intersections[BotRight]);
+	}
 
-			// use near centre dist so we can use small fovs and still spawn grass
-			if (i >= TopRight && lengthSqr(nearIntesectCentre - intersections[i]) > (grassMaxDistSqr))
-			{
-        // since our far intersections are too far, we project them towards the direction at the maximum allowed distance
-				Vector3 p = cameraPosition + edgeDirections[i] * (GRASS_DISTANCE + length(nearIntesectCentre - cameraPosition));
-        // if above ground still then intersect test downwards
-				const Vector3 dir = p.getY() > 0.0f ? -cameraUp : normalize(intersections[i] - p); // shoot towards near intersections if we are bl
-				LinePlaneIntersection(intersections[i], planeN, dir, p);
-			}
-    }
+	// use near centre dist so we can use small fovs and still spawn grass
+	if (i >= TopRight && lengthSqr(nearIntesectCentre - intersections[i]) > (grassMaxDistSqr))
+	{
+        	// since our far intersections are too far, we project them towards the direction at the maximum allowed distance
+		Vector3 p = cameraPosition + edgeDirections[i] * (GRASS_DISTANCE + length(nearIntesectCentre - cameraPosition));
+		// if above ground still then intersect test downwards
+		const Vector3 dir = p.getY() > 0.0f ? -cameraUp : normalize(intersections[i] - p); // shoot towards near intersections if we are bl
+		LinePlaneIntersection(intersections[i], planeN, dir, p);
+	}
+}
     
-    Vector3 centre = lerp(
-		0.5f,
-		lerp(0.5f, intersections[BotLeft], intersections[BotRight]),
-		lerp(0.5f, intersections[TopLeft], intersections[TopRight]));
+Vector3 centre = lerp(
+	0.5f,
+	lerp(0.5f, intersections[BotLeft], intersections[BotRight]),
+	lerp(0.5f, intersections[TopLeft], intersections[TopRight]));
 ```
 
 After calculating the centre point we use this as the piviot for our patch of grass positions generated in the compute shader. We use a grass_mesh_density value as our grid density for distances between each grass quad. Using our current grass index (threadId) to calculate the local translation from the centre point. These positions are snapped to the world grid and later used as a seed for the grass quad properties.
@@ -98,6 +100,7 @@ Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next 
    position.xz = rotate(position.xz, float2(facing.y, -facing.x));
    position.xz += data.position.xy;
 ```
+<img align="center" width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
 
 Now using the instance data to get our vertex positions, we need a depth prepass to avoid overdraw, the cost of depth overdraw is much much less than the lit pass overdraw. After that we render the lit grass which involves a lot of small tricks to blend the colour with the ground while also having its own detail. In the pixel shader we blend between the grass texture and the field texture based on distance from the camera near intersection (bottom corners). We also blend the material and normals based on a factor driven by camera height angle. This means when the camera is low and close to the grass we use the grass material maps but when the camera is higher we use the default ground values.
 
@@ -120,6 +123,8 @@ Now using the instance data to get our vertex positions, we need a depth prepass
    material.cavity = lerp(matSample.b, material.cavity, cameraHeightBlend);
         
 ```
+
+<img align="center" width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
 
 <br><br>
 <h2 align="center">End Notes</h2><hr>
