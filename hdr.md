@@ -109,6 +109,10 @@ While this is great, for some reason they don't give us Paperwhite Nits which is
 
 Paperwhite nits defines what the user considers the maximum SDR brightness (like how bright text should be), this can change depending on the viewing environment. In a dark room 80 nits may seem very bright, but in a typically lit room to achieve a decent bright white just for reading text - paperwhite ends up being around 200+ nits. So we need to calibrate our game's paperwhite like we do for gamma. The best way (according to microsoft too) is to just show an image of the game in different environments, and let the user decide what looks good.
 
+<div align="center">
+<img width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket">
+<hr><br>
+</div>
 
 <h2 align="center">End Notes</h2><br>
 
