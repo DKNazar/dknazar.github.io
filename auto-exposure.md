@@ -78,8 +78,7 @@ The second pass we call one dispatch where we now read our 16x16 uint RWTexture 
 This exp(luminance) value is stored to use later in our tonemapping as a premultiplication of the HDR colour. The exposure is adjusted to the KeyValue which defines what we want our average luminance to reach (the goal of the auto-exposure). The KeyValue is typically 0.18, this is called middle grey in photography terms, it can be adjusted depending on how bright or dark you want the game overall.
 
 ```hlsl
-// Determines the color based on exposure settings
-float3 CalcExposedColor(in float3 color, in float avgLuminance, in float offset)
+float3 CalcExposedColor(float3 color, float avgLuminance)
 {
     float linearExposure = (autoKeyValue / avgLuminance);
     return linearExposure * color;
