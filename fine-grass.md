@@ -20,17 +20,17 @@ First we need to calculate where the grass should be rendered, we don't want to 
 for (u32 i = 0; i < 4; i++)
 {
 	{
-	const Vector3& p = cameraPosition;
-	const Vector3& dir = edgeDirections[i];
-       
-        // if above ground and we got intersection
-	isIntersection[i] = corners[i].getY() < 0.0f && LinePlaneIntersection(intersections[i], planeN, dir, p);
-        // without intersection just set them to camera far corners on the ground
-	if (!isIntersection[i])
-	{
-		intersections[i] = corners[i];
-		intersections[i].setY(0);
-	}
+		const Vector3& p = cameraPosition;
+		const Vector3& dir = edgeDirections[i];
+       	
+        	// if above ground and we got intersection
+		isIntersection[i] = corners[i].getY() < 0.0f && LinePlaneIntersection(intersections[i], planeN, dir, p);
+        	// without intersection just set them to camera far corners on the ground
+		if (!isIntersection[i])
+		{
+			intersections[i] = corners[i];
+			intersections[i].setY(0);
+		}
 	}
 
       	// should unroll loop since we do these conditional operations
