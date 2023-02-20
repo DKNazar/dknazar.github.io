@@ -4,8 +4,10 @@ permalink: /hdr/
 ---
 <h1 align="center">The Mysterious HDR</h1>
 
-<img align="center" width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket">
+<div align="center">
+<img width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket">
 <hr><br>
+</div>
 
 <h2 align="center">Preamble</h2>
 
