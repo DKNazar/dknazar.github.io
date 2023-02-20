@@ -118,7 +118,7 @@ Guerrilla clouds were made to create dramatic cloudscapes for their fantasy game
 <br>
 <h2 align="center">Optimisations</h2><hr>
 
-This is very implementation specific, but the original Guerrilla Games optimisations are the major factors. These include doing large ray-march steps when not intersecting clouds, more aggressive stencil-testing, and reprojecting across frames. The reprojecting step is the most complicated where you render the clouds at 1/4 resolution and update those select pixels over, slowly building the full frame.
+This is very implementation specific, but the original Guerrilla Games optimisations are the major factors. These include doing large ray-march steps when not intersecting clouds, more aggressive stencil-testing, and reprojecting across frames. The reprojecting step is the most complicated where you render the clouds at 1/4 resolution and update those select pixels over time, slowly building the full frame.
 
 
 <div align="center">
