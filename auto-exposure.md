@@ -25,7 +25,7 @@ To detect the brightness of a scene we take the average luminance of the HDR col
 <br>
 <hr>
 
-To detect the brightness of a scene we take the average luminance of the HDR colour buffer (output of our lighting pass) using a compute shader that sums up each texel's luminance. This is done in two passes, the first dispatch runs through each pixel, it is optimised by working on a 2x2 tile and sampling the 2x2 texel corners using bilinear filtering to get an effective 4x4 sample in total. Each sample's luminance is calculated and converted from a float into a uint to make later use of InterlockedAdd. These 4x4 uint luminance values are summed and stored in groupshared memory, and GroupMemoryBarrierWithGroupSync() is called to guarentee all threads have calculated this value.
+To detect the brightness of a scene we take the average luminance of the HDR colour buffer (output of our lighting pass) using a compute shader that sums up each texel's luminance. This is done in two passes, the first dispatch runs through each pixel, it is optimised by working on a 2x2 tile and sampling the 2x2 texel corners using bilinear filtering to get an effective 4x4 sample in total. Each sample's luminance is calculated and converted from a float into a uint to make later use of InterlockedAdd. These 4x4 uint luminance values are summed and stored in groupshared memory, and GroupMemoryBarrierWithGroupSync() is called to guarantee all threads have calculated this value.
 
 ```hlsl
     // We work on a 4x4 tile, using linear sampling on the corners of a 2x2 tile
@@ -89,6 +89,6 @@ float3 CalcExposedColor(in float3 color, in float avgLuminance, in float offset)
 <br><br>
 <h2 align="center">End Notes</h2><hr>
 
-The idea is very simple, the optimisation of the implementation makes it more complicated but it was a great learning experience in compute shaders. This runs extremely fast on PS4 and Xbox One.
+The idea is very simple, the optimisation of the implementation makes it more complicated but it was a great learning experience in compute shaders. This runs extremely fast on PS4 and Xbox One. The main draw back in using frame luminance average is it can be dramatically shifted by a few very bright or dark pixels. To avoid this we just clamp the accepted luminance values to make sure we do not consider any too extreme values.
 
 <br><br>
