@@ -139,9 +139,9 @@ Now using the instance data to get our vertex positions, we need a depth prepass
 ```
 
 <div align="center">
-	<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
+<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
 	
-	Grass fully blended with ground texture and material.
+Grass fully blended with ground texture and material.
 </div>
 
 <br><br>
