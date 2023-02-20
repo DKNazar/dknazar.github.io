@@ -11,7 +11,7 @@ One of my first tasks as a graphics programmer was to improve their TAA implemen
 <br>
 <h2 align="center">Quickly Explain</h2><hr>
 
-TAA is essentially jiggling the camera every frame, then blurring/blending them together to produce a smooth looking image. Aliased pixels are where geometry (and other) detail is unable to be represented on the low resolution screen. It lands between pixels (subpixel) and cannot be perfectly represented, causing jagged edges. By jiggling (or jittering) the camera a tiny subpixel amount these jagged edges will snap back and forth between different pixel locations. The results of each frame  By blending these subpixel movements every frame the image will blur these edges over time, resulting in a smooth image.
+TAA is essentially jiggling the camera every frame, then blurring/blending them together to produce a smooth looking image. Aliased pixels are where geometry (and other) detail is unable to be represented on the low resolution screen. It lands between pixels (subpixel) and cannot be perfectly represented, causing jagged edges. By jiggling (or jittering) the camera a tiny subpixel amount these jagged edges will snap back and forth between different pixel locations. By blending these subpixel movements every frame the image will blur these edges over time, resulting in a smooth image.
 
 The main strength of TAA over other screen space anti-aliasing techniques is that it is temporally stable, during camera motion the image should still be smooth and free of aliasing. Unlike FXAA or SMAA (although there are SMAA+TAA techniques).
 
