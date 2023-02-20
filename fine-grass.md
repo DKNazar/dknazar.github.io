@@ -12,6 +12,13 @@ Most games are about adventure and exploration, with tall grass and dense foliag
 <img width="600" src="/images/grass-mat.png" alt="grass wth material">
 </div>
 
+<h3 align="center">Research Links</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=Ibe1JBF5i5Y" target="_blank"> Ghost of Tsushima Grass</a>: State of the art in AAA wild grass, great information in here.</li>
+  <li><a href="https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-7-rendering-countless-blades-waving-grass" target="_blank"> Nvidia Grass Rendering</a>: basics of card grass rendering.</li>
+</ul>
+
 <h2 align="center">Implementation Details</h2>
 
 First we need to calculate where the grass should be rendered, we don't want to render everywhere and anywhere. On the CPU we calculate the centre point of the grass bounds. This involves a number of plane intersection tests with the camera frustrum planes and the ground (which is always 0 for us). There are a few special considerations, if there is no top corners intersecting or if they are above our maximum distance we need to project them to the maximum. These distances also need to be calculated relative to the bottom corner/near line intersections. Because at small fovs the intersection corners can be extremely far from the camera world position.
