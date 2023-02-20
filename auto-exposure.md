@@ -15,7 +15,7 @@ permalink: /auto-exposure/
 We treat auto-exposure as multiplier on the raw lighting pass in our game, which can brighten or darken our scene. This is to emulate our eyes and cameras which adapt to different lighting environments, in a dark room we can see more after our eyes adjust. In terms of the game it makes your artist's life much easier when it comes to lighting their scenes. Especially useful for dynamic enviornments like day/night cycles and weather effects.
 
 <br>
-<h2 align="center">Quickly Explain</h2>
+<h2 align="center">Quickly Explain</h2><br>
 <hr>
 
 To detect the brightness of a scene we take the average luminance of the HDR colour buffer (output of our lighting pass) using a compute shader that sums up each texel's luminance. This is done in two passes, the first sums it all into a 16x16 texture, the second sums and blends that value with the old luminance value. This luminance value is later used to calculate the exposure in the tonemapping step, which premultiplies the colour buffer. The way exposure is calculated is relative to the KeyValue which represents the desired average luminance which by default it 0.18 called middle grey in photography.
