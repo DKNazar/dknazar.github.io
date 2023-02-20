@@ -20,6 +20,13 @@ We treat auto-exposure as multiplier on the raw lighting pass in our game, which
 
 To detect the brightness of a scene we take the average luminance of the HDR colour buffer (output of our lighting pass) using a compute shader that sums up each texel's luminance. This is done in two passes, the first sums it all into a 16x16 texture, the second sums and blends that value with the old luminance value. This luminance value is later used to calculate the exposure in the tonemapping step, which premultiplies the colour buffer. The way exposure is calculated is relative to the KeyValue which represents the desired average luminance which by default it 0.18 called middle grey in photography.
 
+<h3 align="center">Research Links</h3>
+
+<ul>
+  <li><a href="https://github.com/TheRealMJP/BakingLab" target="_blank"> MJP's Baking Lab</a>: great example of a number of post effects including expsoure.</li>
+  <li><a href="https://placeholderart.wordpress.com/2014/11/21/implementing-a-physically-based-camera-manual-exposure/" target="_blank"> Implementing PBR camera exposure</a>: math behind the camera.</li>
+</ul>
+
 <br>
 <h2 align="center">Fully Explain</h2>
 <br>
