@@ -23,9 +23,9 @@ Click the images to see more!
   <a href="procedural-sky" target="_blank"><img align="center" width="600" src="/images/cloud-1.png" alt="Sky with volumetric clouds"></a>
   <hr><br>
   
-  <h3>HDR</h3>
+  <h3>HDR and Tonemapping</h3>
   <ul>
-  <li><em>Implementing HDR where colours are bright and the points don't matter</em></li>
+  <li><em>Implementing the HDR pipeline where colours are bright and we made up new numbers to deal with it.</em></li>
   </ul>
   
   <a href="hdr" target="_blank"><img align="center" width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket"></a>
