@@ -53,7 +53,7 @@ for (u32 i = 0; i < 4; i++)
         	// since our far intersections are too far, we project them towards the direction at the maximum allowed distance
 		Vector3 p = cameraPosition + edgeDirections[i] * (GRASS_DISTANCE + length(nearIntesectCentre - cameraPosition));
 		// if above ground still then intersect test downwards
-		const Vector3 dir = p.getY() > 0.0f ? -cameraUp : normalize(intersections[i] - p); // shoot towards near intersections if we are bl
+		const Vector3 dir = p.getY() > 0.0f ? -cameraUp : normalize(intersections[i] - p); // shoot towards near intersections if we are below
 		LinePlaneIntersection(intersections[i], planeN, dir, p);
 	}
 }
