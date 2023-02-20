@@ -12,7 +12,7 @@ Most games are about adventure and exploration, with tall grass and dense foliag
 <img width="600" src="/images/grass-mat.png" alt="grass wth material">
 </div>
 
-<h2 align="center">Fully Explain</h2>
+<h2 align="center">Implementation Details</h2>
 
 First we need to calculate where the grass should be rendered, we don't want to render everywhere and anywhere. On the CPU we calculate the centre point of the grass bounds. This involves a number of plane intersection tests with the camera frustrum planes and the ground (which is always 0 for us). There are a few special considerations, if there is no top corners intersecting or if they are above our maximum distance we need to project them to the maximum. These distances also need to be calculated relative to the bottom corner/near line intersections. Because at small fovs the intersection corners can be extremely far from the camera world position.
 
