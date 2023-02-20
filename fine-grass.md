@@ -15,8 +15,8 @@ Most games are about adventure and exploration, with tall grass and dense foliag
 <h3 align="center">Research Links</h3>
 
 <ul>
-  <li><a href="https://www.youtube.com/watch?v=Ibe1JBF5i5Y" target="_blank"> Ghost of Tsushima Grass</a>: State of the art in AAA wild grass, great information in here.</li>
-  <li><a href="https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-7-rendering-countless-blades-waving-grass" target="_blank"> Nvidia Grass Rendering</a>: basics of card grass rendering.</li>
+  <li><a href="https://www.youtube.com/watch?v=Ibe1JBF5i5Y" target="_blank"> Ghost of Tsushima Grass</a>: State of the art in AAA wild grass, great information in here but not super applicable in our case.</li>
+  <li><a href="https://developer.nvidia.com/gpugems/gpugems/part-i-natural-effects/chapter-7-rendering-countless-blades-waving-grass" target="_blank"> Nvidia Grass Rendering</a>: basics of card grass rendering, more relevant to what we are doing.</li>
 </ul>
 
 <h2 align="center">Implementation Details</h2>
