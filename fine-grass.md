@@ -109,8 +109,11 @@ Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next 
    position.xz = rotate(position.xz, float2(facing.y, -facing.x));
    position.xz += data.position.xy;
 ```
+
 <div align="center">
-<img width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
+  <img width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
+	
+  Grass from above perspective, flattening the grass to fake volume.
 </div>
 	
 Now using the instance data to get our vertex positions, we need a depth prepass to avoid overdraw, the cost of depth overdraw is much much less than the lit pass overdraw. After that we render the lit grass which involves a lot of small tricks to blend the colour with the ground while also having its own detail. In the pixel shader we blend between the grass texture and the field texture based on distance from the camera near intersection (bottom corners). We also blend the material and normals based on a factor driven by camera height angle. This means when the camera is low and close to the grass we use the grass material maps but when the camera is higher we use the default ground values.
@@ -136,7 +139,9 @@ Now using the instance data to get our vertex positions, we need a depth prepass
 ```
 
 <div align="center">
-<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
+	<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
+	
+	Grass fully blended with ground texture and material.
 </div>
 
 <br><br>
