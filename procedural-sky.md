@@ -16,6 +16,15 @@ Originally the task was to create a new cloud system that could use the match we
 </div>
 <br>
 
+
+<h3 align="center">Research Links</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=y-oBGzDCZKI" target="_blank">Presentation - Sky and Atmosphere by Sebastien Hillaire</a>: great talk on the techniques to render a phyiscally based sky</li>
+  <li><a href="https://sebh.github.io/publications/egsr2020.pdf" target="_blank">Paper - Sky and Atmosphere by Sebastien Hillaire</a>: more details and math, unforuntely has a lot of prerequisite reading.</li>
+  <li>[Bruneton and Neyr precomputed scattering](https://ebruneton.github.io/precomputed_atmospheric_scattering/): the prerequisite reading, goes into details of the maths behind, especially in the LUT encoding.</li>
+</ul>
+
 <h2 align="center">Physically Based Atmosphere</h2><hr>
 
 The old sky was a completely unmaintained gradient, with crazy HDR values which destroyed the auto-exposure and tone-mapping (a whole other topic). So the first step was to investigate state of the art techniques in PBR atmospheres. The most popular was a series of precomputed LUTs by [Bruneton and Neyr](https://ebruneton.github.io/precomputed_atmospheric_scattering/). These LUTs included transmittance, scattering, and irradiance to build a realistic Earth sky. Although they were generally too expensive to compute in real-time, I imagine most games would slowly compute over time or blend prebaked LUTs. But a more recent paper from [Hillaire](https://sebh.github.io/publications/egsr2020.pdf) at Epic Games took the Bruneton method and reduced the complexity, specifically in the light scattering steps. This sky was faster and much more scalable with the intention to work on mobile.
