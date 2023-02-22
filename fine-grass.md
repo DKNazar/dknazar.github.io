@@ -88,17 +88,17 @@ After calculating the centre point we use this as the piviot for our patch of gr
 ```
 
 
-Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next step is to call our instance draw, using the grass buffer with the InstanceID to retrieve the appropriate instance data in our vertex shader. 
+Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next step is to call our instance draw, using the grass buffer with the InstanceID to retrieve the appropriate instance data in our vertex shader. The geometry is further transformed in the vertex, for example we lightly flatten the quad dependant on camera height to add volume at steep camera angles.
 
 ```hlsl
    GrassInstanceData data = GrassInstanceBuffer[instanceId];
    float4 position = float4(localpos.xyz, 1);
    
-   // we shear/flatten our grass dependant on the relative camera height to give grass more volume at high angles
    float3 toCamera = cameraPosition.xyz - float3(data.position.x, 0.0f, data.position.y);
    float cameraDistance = max(length(toCamera), 0.001);
    toCamera /= cameraDistance;
    
+   // we shear/flatten our grass dependant on the relative camera height to give grass more volume at high angles
    float3 up = float3(0, 1, 0);
    float2 facing = data.facing;
    float yFactor = saturate((dot(up, toCamera)) * g_grass_heightShear);
@@ -111,9 +111,8 @@ Now that the GrassInstanceBuffer (StructuredBuffer) has been populated the next 
 ```
 
 <div align="center">
-  <img width="600" src="/images/grass-flat.png" alt="grass flattening to camera">
-	
-  Grass from above perspective, flattening the grass to fake volume.
+  <img width="600" src="/images/grass-flat.png" alt="grass flattening to camera"><br>
+  <em>Grass from above perspective, flattening the grass to fake volume.</em><br><br>  
 </div>
 	
 Now using the instance data to get our vertex positions, we need a depth prepass to avoid overdraw, the cost of depth overdraw is much much less than the lit pass overdraw. After that we render the lit grass which involves a lot of small tricks to blend the colour with the ground while also having its own detail. In the pixel shader we blend between the grass texture and the field texture based on distance from the camera near intersection (bottom corners). We also blend the material and normals based on a factor driven by camera height angle. This means when the camera is low and close to the grass we use the grass material maps but when the camera is higher we use the default ground values.
@@ -139,9 +138,8 @@ Now using the instance data to get our vertex positions, we need a depth prepass
 ```
 
 <div align="center">
-<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground">
-	
-Grass fully blended with ground texture and material.
+<img width="600" src="/images/grass-full-blend.png" alt="grass fully blended with ground"><br>
+<em>Grass fully blended with ground texture and material.</em><br><br>  
 </div>
 
 <br><br>
