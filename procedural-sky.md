@@ -23,6 +23,7 @@ Originally the task was to create a new cloud system that could use the match we
   <li><a href="https://www.youtube.com/watch?v=y-oBGzDCZKI" target="_blank">Presentation - Sky and Atmosphere by Sebastien Hillaire</a>: great talk on the techniques to render a phyiscally based sky</li>
   <li><a href="https://sebh.github.io/publications/egsr2020.pdf" target="_blank">Paper - Sky and Atmosphere by Sebastien Hillaire</a>: more details and math, unforuntely has a lot of prerequisite reading.</li>
   <li><a href="https://ebruneton.github.io/precomputed_atmospheric_scattering/" target="_blank">Bruneton and Neyr precomputed scattering</a>: the prerequisite reading, goes into details especially in the LUT encoding.</li>
+  <li><a href="https://www.guerrilla-games.com/read/nubis-authoring-real-time-volumetric-cloudscapes-with-the-decima-engine" target="_blank">Guerrilla Games' Nubis</a>: fantastic presentation on the volumetric clouds of Horizon Zero Dawn.</li>
 </ul>
 
 <h2 align="center">Physically Based Atmosphere</h2><hr>
@@ -75,7 +76,7 @@ Now that all our LUTs are computed we use the Sky-View LUT in our ray-march wher
 <br>
 
 Now that we have a beautiful atmosphere we need the sun to be correctly positioned. Since we are a simulation game, we need to convert our time and location into an accurate sun to get exact shadows. A paper by [Zhang](https://www.sciencedirect.com/science/article/pii/S0960148121004031) describes a simplified method to calculate this exact thing in polar co-ordinates. Implementing this as input to our atmosphere meant we have realistic sun positions for all stadiums. Which also when we discovered that all stadiums were setup incorrectly, and believed they were in Australia.
-A great test for this was [Svalbard](https://www.visitnorway.com/things-to-do/nature-attractions/midnight-sun/), Norway where during summer the sun never sets. While I imagine no one plays cricket that north, it is fantastic to see if we wanted to in our game the sun would never set accurately!
+A great test for this was [Svalbard](https://www.visitnorway.com/things-to-do/nature-attractions/midnight-sun/), Norway where during summer the sun never sets. While I imagine no one plays cricket that north, it is fantastic to see if we wanted to: in our game the sun would never set accurately!
 
 
 <h2 align="center">Volumetric Clouds</h2><hr>
