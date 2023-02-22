@@ -22,7 +22,7 @@ Originally the task was to create a new cloud system that could use the match we
 <ul>
   <li><a href="https://www.youtube.com/watch?v=y-oBGzDCZKI" target="_blank">Presentation - Sky and Atmosphere by Sebastien Hillaire</a>: great talk on the techniques to render a phyiscally based sky</li>
   <li><a href="https://sebh.github.io/publications/egsr2020.pdf" target="_blank">Paper - Sky and Atmosphere by Sebastien Hillaire</a>: more details and math, unforuntely has a lot of prerequisite reading.</li>
-  <li>[Bruneton and Neyr precomputed scattering](https://ebruneton.github.io/precomputed_atmospheric_scattering/): the prerequisite reading, goes into details of the maths behind, especially in the LUT encoding.</li>
+  <li><a href="https://ebruneton.github.io/precomputed_atmospheric_scattering/" target="_blank">Bruneton and Neyr precomputed scattering</a>: the prerequisite reading, goes into details especially in the LUT encoding.</li>
 </ul>
 
 <h2 align="center">Physically Based Atmosphere</h2><hr>
