@@ -12,6 +12,7 @@ permalink: /origami-ninja-star/
 Status: In development. Demo available on Steam.
 
 Follow Twitter to see latest updates: [@Dono_Arts](https://twitter.com/dono_arts)
+Contact: [OrigamiNinjaStarDev+Contact@gmail.com](mailto:OrigamiNinjaStarDev+Contact@gmail.com)
 
 Steam: [https://store.steampowered.com/app/1147910/Origami_Ninja_Star/](https://store.steampowered.com/app/1147910/Origami_Ninja_Star/)
 
@@ -19,7 +20,7 @@ Origami Ninja Star is a chaotic hybrid of fast paced platforming and momentum-ba
 
 <br>
 <div align="center">
-  <img src="/images/new_trees.gif" width="600" /><br>
+  <img src="/images/ONS_Screen_PageSlice.png" width="600" /><br>
   <em>Fluid momentum/physics-based combat.</em><br>
 </div>
 <br>
@@ -27,7 +28,7 @@ Origami Ninja Star is a chaotic hybrid of fast paced platforming and momentum-ba
 Born in a peaceful origami village, play as a young star determined to create new enemies and tear them apart to prove themself the greatest Origami Ninja Star. As the self-appointed protector of your village, use your unfolding technique to switch between a nimble paper ball and a deadly paper star. Harness momentum as the Ball to traverse and ricochet through levels, then unleash it as the Star to strike enemies with precision.
 
 <div align="center">
-  <img src="https://dknazar.files.wordpress.com/2019/06/hayrunninggif.gif" width="600" /><br>
+  <img src="/images/ONS_Screen_TwoForms.png" width="600" /><br>
   <em>The two paper forms, each with their own strengths.</em><br>
 </div>
 <br>
@@ -49,6 +50,11 @@ Enjoy every fold and scrunch of the paper world, each element inspired by real l
 
 <h2 align="center">Wield the Elements</h2>
 
+<div align="center">
+  <img src="/images/ONS_Screen_ElementalUpgrades.png" width="600" /><br>
+  <em>An immersive and artistic paper world.</em><br>
+</div>
+
 Starting with a base set of combat and traversal abilities, enhance these through elemental upgrades found on each run. Unleash an exploding fire strike, wind shockwaves, lightning dash, and more. Combine these to face increasingly diverse and dangerous enemies each with their own fighting style.
 
 
@@ -60,12 +66,13 @@ Starting with a base set of combat and traversal abilities, enhance these throug
 
 <h1 align="center">About Us</h1>
 
-Dono Arts is Dayaan Nazar and Dua Nazar a brother-sister duo based in Melbourne, Australia. Dayaan is the main developer driving the production of the game, with a background in graphics programming and procedural generation. As an experienced animation producer and musician, Dua is the Producer and Music Composer for the game. She provides the project management, marketing and music for the game, embellishing the soundtrack with traditional Pakistani instruments. We are pursuing our dream of creating fun, innovative, and original games, with Origami Ninja Star being our debut title.
+Dono Arts is Dayaan Nazar and Dua Nazar, a brother-sister duo based in Melbourne, Australia. Dayaan is the main developer driving the production of the game, with a background in graphics programming and procedural generation. As an experienced animation producer and musician, Dua is the Producer and Music Composer for the game. She provides the project management, marketing and music for the game, embellishing the soundtrack with traditional Pakistani instruments. We are pursuing our dream of creating fun, innovative, and original games, with Origami Ninja Star being our debut title.
 
-<h1 align="center">Goals Origami Ninja Star</h1>
+<h1 align="center">Goals for Origami Ninja Star</h1>
 
-Origami Ninja Star is a hybrid of ideas from action-adventure games we played while growing up. Combining aspects of 3D platforming, hack and slash combat, weird unique mechanics, and a meaningful but lighthearted story. While also adding in more modern aspects of games such as roguelike elements and procedural generation so our small team and reach a big scale. The game has gone through many iterations starting as a physics puzzle platform, moving to a combat focused early demo at PAX AUS 2019, and now an action-roguelike with procedurally generated levels.
+Origami Ninja Star is a hybrid of ideas from action-adventure games we played while growing up. Combining aspects of 3D platforming, hack and slash combat, weird unique mechanics, and a meaningful but lighthearted story. While also adding in more modern aspects of games such as roguelike elements and procedural generation so our small team can reach a big scale. The game has gone through many iterations starting as a physics puzzle platform, moving to a combat focused early demo at PAX AUS 2019, and now an action-roguelike with procedurally generated levels.
 
-Contact: OrigamiNinjaStarDev+Contact@gmail.com
+<h1 align="center">Presskit Files</h1>
+Coming soon when I have internet.
 
 <br><br>
