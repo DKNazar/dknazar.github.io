@@ -12,7 +12,7 @@ permalink: /origami-ninja-star/
 Status: In development. Demo available on Steam.
 
 Follow Twitter to see latest updates: [@Dono_Arts](https://twitter.com/dono_arts)
-Contact: [OrigamiNinjaStarDev+Contact@gmail.com](mailto:OrigamiNinjaStarDev+Contact@gmail.com)
+Contact: [OrigamiNinjaStarDev@gmail.com](mailto:OrigamiNinjaStarDev+Contact@gmail.com)
 
 Steam: [https://store.steampowered.com/app/1147910/Origami_Ninja_Star/](https://store.steampowered.com/app/1147910/Origami_Ninja_Star/)
 
@@ -69,7 +69,5 @@ Dono Arts is Dayaan Nazar and Dua Nazar, a brother-sister duo based in Melbourne
 
 Origami Ninja Star is a hybrid of ideas from action-adventure games we played while growing up. Combining aspects of 3D platforming, hack and slash combat, weird unique mechanics, and a meaningful but lighthearted story. While also adding in more modern aspects of games such as roguelike elements and procedural generation so our small team can reach a big scale. The game has gone through many iterations starting as a physics puzzle platform, moving to a combat focused early demo at PAX AUS 2019, and now an action-roguelike with procedurally generated levels.
 
-<h1 align="center">Presskit Files</h1>
-Coming soon when I have internet.
-
+<h1 align="center">[Presskit Files](https://github.com/DKNazar/dknazar.github.io/tree/main/images/ons)</h1>
 <br><br>
