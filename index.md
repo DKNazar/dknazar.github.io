@@ -6,7 +6,7 @@
 
 <h3 align="center"> About me </h3>
 
-Games and graphics programmer, with Bachelor of Arts and Computer Science in game design and development. Currently working at Big Ant Studios as a graphics programmer, and working on personal project Origami Ninja Star. Received the highest achieving graduate prize for 2018. Experienced in cross-platform engine development, graphics/shader programming, and game design.
+Games and graphics programmer, with Bachelor of Arts and Computer Science in game design and development. Currently working on [Origami Ninja Star](https://dknazar.github.io/origami-ninja-star/). Received the highest achieving graduate prize for 2018. Experienced in cross-platform engine development, graphics/shader programming, and game design.
 
 <h2 align="center"> Portfolio </h2>
 <hr>
