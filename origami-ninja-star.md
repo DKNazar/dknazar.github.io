@@ -71,5 +71,5 @@ Origami Ninja Star is a hybrid of ideas from action-adventure games we played wh
 
 <h1 align="center">Presskit Files</h1>
 
-[Folder here](https://github.com/DKNazar/dknazar.github.io/tree/main/images/ons)
+[Folder here](https://drive.google.com/file/d/1JKdn7oncgHirV2NiiAgd4FU0GfFAqXIt/view?usp=sharing)
 <br><br>
