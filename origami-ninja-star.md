@@ -50,12 +50,12 @@ Enjoy every fold and scrunch of the paper world, each element inspired by real l
 
 <h2 align="center">Wield the Elements</h2>
 
+Starting with a base set of combat and traversal abilities, enhance these through elemental upgrades found on each run. Unleash an exploding fire strike, wind shockwaves, lightning dash, and more. Combine these to face increasingly diverse and dangerous enemies each with their own fighting style.
+
 <div align="center">
   <img src="/images/ONS_Screen_ElementalUpgrades.png" width="600" /><br>
-  <em>An immersive and artistic paper world.</em><br>
+  <em>Select elemental upgrades with their own unique mechanics.</em><br>
 </div>
-
-Starting with a base set of combat and traversal abilities, enhance these through elemental upgrades found on each run. Unleash an exploding fire strike, wind shockwaves, lightning dash, and more. Combine these to face increasingly diverse and dangerous enemies each with their own fighting style.
 
 <br>
 
