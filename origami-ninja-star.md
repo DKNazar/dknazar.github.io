@@ -64,7 +64,7 @@ Starting with a base set of combat and traversal abilities, enhance these throug
 
 Dono Arts is Dayaan Nazar and Dua Nazar, a brother-sister duo based in Melbourne, Australia. Dayaan is the main developer driving the production of the game, with a background in graphics programming and procedural generation. As an experienced animation producer and musician, Dua is the Producer and Music Composer for the game. She provides the project management, marketing and music for the game, embellishing the soundtrack with traditional Pakistani instruments. We are pursuing our dream of creating fun, innovative, and original games, with Origami Ninja Star being our debut title.
 
-<br>
+<br><br>
 <h1 align="center">Goals for Origami Ninja Star</h1>
 
 Origami Ninja Star is a hybrid of ideas from action-adventure games we played while growing up. Combining aspects of 3D platforming, hack and slash combat, weird unique mechanics, and a meaningful but lighthearted story. While also adding in more modern aspects of games such as roguelike elements and procedural generation so our small team can reach a big scale. The game has gone through many iterations starting as a physics puzzle platform, moving to a combat focused early demo at PAX AUS 2019, and now an action-roguelike with procedurally generated levels.
