@@ -11,7 +11,10 @@ permalink: /origami-ninja-star/
 
 Status: In development. Demo available on Steam.
 
-Follow Twitter to see latest updates: [@Dono_Arts](https://twitter.com/dono_arts)
+Follow to see the latest updates:
+TikTok: [@DonoArts](https://www.tiktok.com/@donoarts)
+Youtube: [@Dono_Arts](https://www.youtube.com/@Dono_Arts)
+Twitter: [@Dono_Arts](https://twitter.com/dono_arts)
 Contact: [OrigamiNinjaStarDev@gmail.com](mailto:OrigamiNinjaStarDev+Contact@gmail.com)
 
 Steam: [https://store.steampowered.com/app/1147910/Origami_Ninja_Star/](https://store.steampowered.com/app/1147910/Origami_Ninja_Star/)
