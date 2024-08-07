@@ -91,8 +91,82 @@ https://www.youtube.com/watch?v=j-A0mwsJRmk
 
 Each level in the main game is a series of randomly selected rooms, each room has a layout or floorplan made out of lines, like the blueprint of a house. These lines are created from a custom editor within Unity, where you can design the room map. The floorplan determines walls, platforms, valid door placements, prop/foliage, enemy types, counts and location.
 
-<h3 align="center">Mesh Tiles</h3>
+<h3 align="center">Meshing</h3>
 
-Floorplans are then constructed through a series of quads shaped meshes. Floors are generated in realtime in most cases (unless some complex floor geometry is required). Prop prefabs are distributed across declared zones, this is the only case of instantiation. 
+Floorplans are then constructed through a series of quads shaped meshes. Floors are generated in realtime in most cases (unless some complex floor geometry is required). Prop prefabs are distributed across declared zones, this is the only case of instantiation. Each of these are pulled from level specific biome data which include colour palettes, wall meshes (which can contain submeshes), floor materials, and prop prefabs. These steps are all timesliced and loaded while the player enters the adjacent room.
 
+Using the Unity profiler I was able to optimise this fairly well and in most cases it was simply avoiding any copying (C# things) or instantiating (Unity's greatest pain). For walls each quad mesh is selected (weighted random) and its mesh and materials is added to a list. This list of meshes and materials is sent to be combined through Unity's CombineMeshes() function.
+
+``` c#
+public void MeshCombineObjectPool(Transform parent, Mesh[] meshes, Matrix4x4[] localToWorlds, Material[][] materials)
+	{
+		// Each material has a mesh combine list.
+		s_perMatCombines.Clear();
+		s_uniqueMaterials.Clear();
+
+		List<CombineInstance> matList;
+		for (int i = 0; i < materials.Length; i++)
+		{
+			for (int j = 0; j < materials[i].Length; j++)
+			{
+				if (s_uniqueMaterials.Add(materials[i][j]))
+					s_perMatCombines[materials[i][j]] = matList = new List<CombineInstance>();
+				else
+					matList = s_perMatCombines[materials[i][j]];
+
+				matList.Add(new CombineInstance()
+				{ mesh = meshes[i], subMeshIndex = j, transform = localToWorlds[i] });
+
+			}
+		}
+        matList = null;
+
+		// For each unique material
+		foreach (Material mat in s_uniqueMaterials)
+		{
+			Mesh sharedMesh = new Mesh();
+            // Use unity's combine meshes function which runs pretty fast
+			sharedMesh.CombineMeshes(s_perMatCombines[mat].ToArray(), true);
+            // Grab a gameObject we previously created which already has the components we want
+			MeshObjectPool.MeshObject poolObject = MeshObjectPool.GetPooledMeshObject();
+
+			Transform meshTransform = poolObject.Transform;
+            GameObject meshGameObject = meshTransform.gameObject;
+			meshGameObject.isStatic = true;
+			meshTransform.SetParent(parent, false);
+            poolObject.m_filter.sharedMesh = sharedMesh;
+            poolObject.m_renderer.material = mat;
+            poolObject.m_renderer.shadowCastingMode = ShadowCastingMode.TwoSided;
+
+			if (useBoxColliders)
+            {
+                poolObject.m_boxCollider.center = sharedMesh.bounds.center;
+                poolObject.m_boxCollider.size = sharedMesh.bounds.size;
+				poolObject.m_boxCollider.enabled = true;
+			}
+            else
+            {
+                poolObject.m_meshCollider.sharedMesh = sharedMesh;
+                poolObject.m_meshCollider.enabled = true;
+            }
+			// Inflate bounds to stop culling since custom vertex deformation is used.
+            Bounds sharedMeshBounds = sharedMesh.bounds;
+            sharedMeshBounds.Expand(GetScale().y);
+            sharedMesh.bounds = sharedMeshBounds;
+            // add to our pool list so we can keep track on destroy/release
+			m_pool.Add(poolObject);
+		}
+	}
+```
+
+This function also makes use of our biggest optimisation, PooledMeshObjects. This is extremely simple and a classic Unity optimisation, I instantiate a big amount of GameObjects with desired components at load time. Then in realtime scenarios I simply grab a GameObject from this pool instead of instantiating (which is SUPER slow). This pooled GameObject holds the mesh rendering and collider components for our wall which was made of separate quads but now combined into a single mesh object.
+
+Floors are generated through a convex mesh generator, and since there is usually only one or two floors it can just run in realtime.
+
+Finally I also timesliced this so it would run without stutters on mobile.
+
+Props are the only objects that require instantiating, due to how different they can be, I plan to look into methods to make this faster. This is timesliced so only one instantiate happens per frame for now.
+
+
+<h3 align="center">Nature Rendering</h3>
 <br><br>
