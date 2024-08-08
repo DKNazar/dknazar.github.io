@@ -1,11 +1,11 @@
 ---
 title: "Tech Notes: Origami Ninja Star"
-permalink: /ONS_Tech_Notes/
+permalink: /ons-tech-notes/
 ---
 <h1 align="center">Tech Notes: Origami Ninja Star</h1>
 
 <div align="center">
-<img width="600" src="/images/hdr-calibration-example.png" alt="hdr calibration screen for cricket">
+<img width="600" src="/images/ONS_Screen_PageSlice.png" alt="Ninja Star slicing enemy">
 <hr><br>
 </div>
 
