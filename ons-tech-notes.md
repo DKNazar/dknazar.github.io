@@ -99,6 +99,11 @@ The post-processing stack is fairly small including:
 
 Each level in the main game is a series of randomly selected rooms, each room has a layout or floorplan made out of lines, like the blueprint of a house. These lines are created from a custom editor within Unity, where you can design the room map. The floorplan determines walls, platforms, valid door placements, prop/foliage, enemy types, counts and location.
 
+<h4 align="center">Floorplant before and after:</h4>
+<div align="center">
+<img width="600" src="/images/floorplan-to-build.png" alt="Floorplan before and after build">
+<hr><br>
+</div>
 
 <h3 align="center">Meshing</h3>
 
