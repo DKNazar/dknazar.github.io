@@ -6,7 +6,7 @@
 
 <h3 align="center"> About me </h3>
 
-Games and graphics programmer, with Bachelor of Arts and Computer Science in game design and development. Currently working on [Origami Ninja Star](https://dknazar.github.io/origami-ninja-star/). Received the highest achieving graduate prize for 2018. Experienced in cross-platform engine development, graphics/shader programming, and game design.
+Games and graphics programmer, with Bachelor of Arts and Computer Science in game design and development. Currently working on [Origami Ninja Star](https://dknazar.github.io/origami-ninja-star/). Received the highest achieving graduate prize, worked in industry for many years as a graphics programmer, making my own game. Experienced in cross-platform engine development, graphics/shader programming, and game design.
 
 <h2 align="center"> Portfolio </h2>
 <hr>
@@ -16,7 +16,7 @@ Click the images to see more!
 <div>
 
 
-  <h3><a href="ons-tech-notes" target="_blank">Tech Notes: Origami Ninja Star</a></h3>
+  <h3><a href="ons-tech-notes" target="_blank">Tech Notes - Origami Ninja Star</a></h3>
   <ul>
   <li><em>My general notes regarding the technology (graphics, engine, procedural generation) involved in Origami Ninja Star</em></li>
   </ul>
