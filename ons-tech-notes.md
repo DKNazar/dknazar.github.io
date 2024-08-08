@@ -11,7 +11,7 @@ permalink: /ons-tech-notes/
 
 <h2 align="center">Preamble</h2>
 
-These are miscellaneous notes on the technology of Origami Ninja Star, my solo developed game using Unity.
+These are miscellaneous notes on the technology of Origami Ninja Star, my solo developed game using Unity. Still in development so this page will be updated along the way!
 
 <h2 align="center">Unity</h2>
 
