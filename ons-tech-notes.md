@@ -13,10 +13,12 @@ permalink: /ons-tech-notes/
 
 These are miscellaneous notes on the technology of Origami Ninja Star, my solo developed game using Unity. Still in development so this page will be updated along the way!
 
+<hr><br>
 <h2 align="center">Unity</h2>
 
 Unity has gone through many phases, but in general I find it lately a bit more positive. But Origami was started early in my game dev career, so Unity was the most approachable engine at the time. If I were to start again I probably would go Godot since I prefer being able to customise the engine now that I have more experience.
 
+<br>
 <h2 align="center">My Universal Render Pipeline (URP) Setup</h2>
 
 I'm using the Unity Universal Render Pipeline since it is a stylized game and really doesn't need a lot of the full photorealistic lighting model. Plus I'd like the game to run on mobile and tablets.
@@ -26,6 +28,8 @@ Avoiding a depth prepass is good since the structure of Origami makes most shape
 
 The shader structure of URP provides 3 different levels of complexicity: SimpleLit, Lit and ComplexLit. 
 These three shaders provide different workflows and features for materials.
+
+<h3 align="center">SimpleLit</h3>
 
 SimpleLit is a straight forward Lambert diffuse with optional BlinnPhong specular lighting + specular map.
 A shortened version of the Unity code for SimpleLit lighting calculation.
@@ -44,6 +48,7 @@ half3 CalculateBlinnPhong(Light light, InputData inputData, SurfaceData surfaceD
 }
 ```
 
+<h3 align="center">Lit and ComplexLit</h3>
 Lit changes to the more realistic CookTorrance BRDF (lightweight version) which is approaching the typical lighting model used in realistic games. ComplexLit seems to follow the same Lit path of CookTorrance but with additional features such as Clearcoat and is always forward rendered.
 [Great resource on specular brdf](https://graphicrants.blogspot.com/2013/08/specular-brdf-reference.html)
 
@@ -70,7 +75,6 @@ BRDF mainly impacts the specular function which is not very useful in a world ma
 
 <div align="center">
 <img width="600" src="/images/SimpleLit-Lit.png" alt="Paper SimpleLit capsule vs Paper Lit capsule">
-<hr><br>
 </div>
 
 
@@ -88,11 +92,13 @@ The post-processing stack is fairly small including:
 - Custom edge detection pass to add sketchy line work to the world
 - DOF (sometimes)
 
+<br>
 <h2 align="center">Procedural Levels</h2>
 
 <h3 align="center">Room Floorplans</h3>
 
 Each level in the main game is a series of randomly selected rooms, each room has a layout or floorplan made out of lines, like the blueprint of a house. These lines are created from a custom editor within Unity, where you can design the room map. The floorplan determines walls, platforms, valid door placements, prop/foliage, enemy types, counts and location.
+
 
 <h3 align="center">Meshing</h3>
 
@@ -297,7 +303,7 @@ public void BuildGeometryTimeSliced(InfVisualConfig visualConfig, LevelInfinity 
 	IsUpdating = true; // we start updating
 }
 ```
-
+<hr><br>
 <h3 align="center">AI Navigation</h3>
 
 Unity's new navigation system is able to run fairly well in realtime, and means there is not a lot of effort to create a navmesh when generating rooms.
