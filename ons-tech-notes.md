@@ -21,8 +21,6 @@ Unity has gone through many phases, but in general I find it lately a bit more p
 
 I'm using the Unity Universal Render Pipeline since it is a stylized game and really doesn't need a lot of the full photorealistic lighting model. Plus I'd like the game to run on mobile and tablets.
 
-The Setup:
-
 I use the Forward+ rendering path with no depth prepass. Forward+ uses clustered lighting, which is nice although I do not use many lights.
 Avoiding a depth prepass is good since the structure of Origami makes most shapes simple does not produce much overdraw.
 
