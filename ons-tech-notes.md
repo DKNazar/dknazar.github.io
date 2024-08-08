@@ -109,10 +109,17 @@ Each level in the main game is a series of randomly selected rooms, each room ha
 
 Floorplans are then constructed through a series of quads shaped meshes. Floors are generated in realtime in most cases (unless some complex floor geometry is required). Prop prefabs are distributed across declared zones, this is the only case of instantiation. Each of these are pulled from level specific biome data which include colour palettes, wall meshes (which can contain submeshes), floor materials, and prop prefabs. These steps are all timesliced and loaded while the player enters the adjacent room.
 
+
+<h4 align="center">Realtime Level Gen:</h4>
+<div align="center">
+<img width="400" src="/images/OrigamiLevelGen.gif" alt="Level generation gif">
+<br>
+</div>
+
 <h4 align="center">Mesh Tiles:</h4>
 <div align="center">
 <img width="600" src="/images/mesh-tiles.png" alt="Mesh tiles">
-<hr><br>
+<br>
 </div>
 
 Using the Unity profiler I was able to optimise this fairly well and in most cases it was simply avoiding any copying (C# things) or instantiating (Unity's greatest pain). For walls each quad mesh is selected (weighted random) and its mesh and materials is added to a list. This list of meshes and materials is sent to be combined through Unity's CombineMeshes() function.
@@ -124,6 +131,7 @@ public void MeshCombineObjectPool(Transform parent, Mesh[] meshes, Matrix4x4[] l
 	s_perMatCombines.Clear();
 	s_uniqueMaterials.Clear();
 
+	// Construct CombineMesh structs and group based on materials across all meshes given
 	List<CombineInstance> matList;
 	for (int i = 0; i < materials.Length; i++)
 	{
@@ -261,11 +269,7 @@ private void Update()
 Props are the only objects that require instantiating, due to how different they can be, I plan to look into methods to make this faster. This is timesliced so only one instantiate happens per frame for now.
 You can see the timesliced level gen in realtime, it is broken up by wall sides and height.
 
-<div align="center">
-<img width="600" src="/images/OrigamiLevelGen.gif" alt="Level generation gif">
 <hr><br>
-</div>
-
 <h3 align="center">Mesh Effects</h3>
 
 To provide room specific mesh effects before generating the room I instance all materials to be used with the room ID which it uses to index into the global cbuffer with color data.
@@ -308,6 +312,9 @@ public void BuildGeometryTimeSliced(InfVisualConfig visualConfig, LevelInfinity 
 	IsUpdating = true; // we start updating
 }
 ```
+
+TO BE EXPANDED!
+
 <hr><br>
 <h3 align="center">AI Navigation</h3>
 
