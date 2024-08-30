@@ -316,6 +316,16 @@ public void BuildGeometryTimeSliced(InfVisualConfig visualConfig, LevelInfinity 
 TO BE EXPANDED!
 
 <hr><br>
+
+<h3 align="center">Nature Rendering</h3>
+
+[Grass rendering demo](https://bitbucket.org/DKNazar/grass-renderer-demo-unity)
+
+A stylized grass rendering demo with gpu culling, some physics interactions, and adjustable/dynamic grass placement. This grass renderer is made for my yet to be released game Origami Ninja Star, which is a game in a stylized paper world. The game is split into seamless procedurally generated rooms, this renderer is built for those requirements.
+
+It demonstrates: using custom URP shaders (not shadergraph), creating a custom SRP renderfeature, indirect instanced rendering, compute shaders, and gpu culling all in Unity.
+
+<hr><br>
 <h3 align="center">AI Navigation</h3>
 
 Unity's new navigation system is able to run fairly well in realtime, and means there is not a lot of effort to create a navmesh when generating rooms.
@@ -331,8 +341,6 @@ m_navMesh.UpdateNavMesh(m_navMeshData).completed += FinishBuildGeometry;
 <img width="600" src="/images/nav-mesh-room.png" alt="Room with navmesh">
 <hr><br>
 </div>
-
-<h3 align="center">Nature Rendering</h3>
 
 TODO!
 
