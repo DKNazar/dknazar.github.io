@@ -16,12 +16,20 @@ Click the images to see more!
 <div>
 
 
+  <h3><a href="grass-rendering-demo" target="_blank">Grass Rendering Demo</a></h3>
+  <ul>
+  <li><em>Stylized grass rendering with GPU culling in Unity</em></li>
+  </ul>
+
+  <a href="grass-rendering-demo" target="_blank"><img align="center" width="600" src="/images/grass_demo.png" alt="Grass demo interface"></a>
+  <hr><br>
+
   <h3><a href="ons-tech-notes" target="_blank">Tech Notes - Origami Ninja Star</a></h3>
   <ul>
   <li><em>My general notes regarding the technology (graphics, engine, procedural generation) involved in Origami Ninja Star</em></li>
   </ul>
 
-  <a href="ons-tech-notes" target="_blank"><img align="center" width="600" src="/images/ONS_Screen_PageSlice.png" alt="Sky with volumetric clouds"></a>
+  <a href="ons-tech-notes" target="_blank"><img align="center" width="600" src="/images/ONS_Screen_PageSlice.png" alt="Origami ninja star slicing through paper character"></a>
   <hr><br>
   
   <h3><a href="procedural-sky" target="_blank">PBR Procedural Sky</a></h3>
